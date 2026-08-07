@@ -15,7 +15,7 @@ const CONFIG = {
   // Target birthday date & time the countdown counts down to.
   // Format: 'YYYY-MM-DDTHH:MM:SS' (interpreted in the visitor's
   // local timezone). Change this single value to move the date.
-  TARGET_DATE: '2026-08-07T00:00:00',
+  TARGET_DATE: '2026-08-08T01:037:00',
 
   // Editable asset paths. Add to this object as later parts
   // introduce more images/sounds/music — keeps every path in one
