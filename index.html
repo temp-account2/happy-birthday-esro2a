@@ -1,30 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%22 y=%2250%22 font-size=%2290%22 text-anchor=%22middle%22 dominant-baseline=%22central%22>🎂</text></svg>"
-    />
-    <title>Happy Birthday 🎂</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday 🎂</title>
 
-    <!-- Google Fonts:
+  <!-- Google Fonts:
        Baloo 2  -> playful rounded display face (headings, countdown digits)
        Quicksand -> soft rounded body face
        Caveat   -> handwritten accent (eyebrow text, later used for the letter/caption) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
 
-    <link rel="stylesheet" href="style.css" />
-    <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="style.css" />
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+      src="https://www.googletagmanager.com/gtag/js?id=G-5GLLJVXZG8"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -33,71 +28,66 @@
       }
       gtag("js", new Date());
 
-      gtag("config", "G-XXXXXXXXXX");
+      gtag("config", "G-5GLLJVXZG8");
     </script>
-  </head>
-  <body>
-    <!-- =========================================================
+</head>
+<body>
+
+  <!-- =========================================================
        SCREEN 1 — COUNTDOWN
        Shown while the current date/time is before CONFIG.TARGET_DATE.
        Later parts will add: lights screen, party scene, cake, letter,
        and final memory. This part implements the countdown only.
        ========================================================= -->
-    <section id="countdown-screen" class="screen" aria-live="polite">
-      <!-- Soft ambient bokeh glow, purely decorative -->
-      <div class="countdown-bg" aria-hidden="true">
-        <span class="glow-orb orb-1"></span>
-        <span class="glow-orb orb-2"></span>
-        <span class="glow-orb orb-3"></span>
-      </div>
+  <section id="countdown-screen" class="screen" aria-live="polite">
 
-      <div class="countdown-content">
-        <p class="countdown-eyebrow">Your surprise is almost ready!</p>
-        <h1 class="countdown-title">
-          Don't go anywhere<span class="title-dot">.</span>
-        </h1>
+    <!-- Soft ambient bokeh glow, purely decorative -->
+    <div class="countdown-bg" aria-hidden="true">
+      <span class="glow-orb orb-1"></span>
+      <span class="glow-orb orb-2"></span>
+      <span class="glow-orb orb-3"></span>
+    </div>
 
-        <div class="countdown-grid" id="countdown-grid">
-          <div class="countdown-card" data-unit="days">
-            <div class="card-flame" aria-hidden="true">
-              <span class="flame-core"></span>
-            </div>
-            <span class="countdown-number" id="count-days">00</span>
-            <span class="countdown-label">Days</span>
-          </div>
+    <div class="countdown-content">
+      <p class="countdown-eyebrow">Something sweet is on its way</p>
+      <h1 class="countdown-title">The Countdown Is On<span class="title-dot">.</span></h1>
 
-          <div class="countdown-card" data-unit="hours">
-            <div class="card-flame" aria-hidden="true">
-              <span class="flame-core"></span>
-            </div>
-            <span class="countdown-number" id="count-hours">00</span>
-            <span class="countdown-label">Hours</span>
-          </div>
+      <div class="countdown-grid" id="countdown-grid">
 
-          <div class="countdown-card" data-unit="minutes">
-            <div class="card-flame" aria-hidden="true">
-              <span class="flame-core"></span>
-            </div>
-            <span class="countdown-number" id="count-minutes">00</span>
-            <span class="countdown-label">Minutes</span>
-          </div>
-
-          <div class="countdown-card" data-unit="seconds">
-            <div class="card-flame" aria-hidden="true">
-              <span class="flame-core"></span>
-            </div>
-            <span class="countdown-number" id="count-seconds">00</span>
-            <span class="countdown-label">Seconds</span>
-          </div>
+        <div class="countdown-card" data-unit="days">
+          <div class="card-flame" aria-hidden="true"><span class="flame-core"></span></div>
+          <span class="countdown-number" id="count-days">00</span>
+          <span class="countdown-label">Days</span>
         </div>
 
-        <p class="countdown-footer">
-          Every Second Is Worth the Wait <br />Trust me.
-        </p>
-      </div>
-    </section>
+        <div class="countdown-card" data-unit="hours">
+          <div class="card-flame" aria-hidden="true"><span class="flame-core"></span></div>
+          <span class="countdown-number" id="count-hours">00</span>
+          <span class="countdown-label">Hours</span>
+        </div>
 
-    <!-- =========================================================
+        <div class="countdown-card" data-unit="minutes">
+          <div class="card-flame" aria-hidden="true"><span class="flame-core"></span></div>
+          <span class="countdown-number" id="count-minutes">00</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+
+        <div class="countdown-card" data-unit="seconds">
+          <div class="card-flame" aria-hidden="true"><span class="flame-core"></span></div>
+          <span class="countdown-number" id="count-seconds">00</span>
+          <span class="countdown-label">Seconds</span>
+        </div>
+
+      </div>
+
+      <p class="countdown-footer">
+        Every Second Is Worth the Wait <br />Trust me.
+      </p>
+      <p class="countdown-footer-2" id="countdown-touch-hint">Touch the screen</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
        SCREEN 2 — BIRTHDAY MODE
        Hidden until the countdown completes. Fades in as a fullscreen
        black screen, then reveals a single "Turn on the lights"
@@ -105,29 +95,30 @@
        lights the room, handing off to the party scene reveal in a
        later part.
        ========================================================= -->
-    <section id="birthday-mode-screen" class="screen screen-dark" hidden>
-      <!-- Faint twinkling stars while the room is still dark -->
-      <div class="dark-sparkles" aria-hidden="true">
-        <span class="dark-star s1"></span>
-        <span class="dark-star s2"></span>
-        <span class="dark-star s3"></span>
-        <span class="dark-star s4"></span>
-        <span class="dark-star s5"></span>
-      </div>
+  <section id="birthday-mode-screen" class="screen screen-dark" hidden>
 
-      <!-- Warm glow that expands outward once the lights are switched on -->
-      <div class="lights-overlay" id="lights-overlay" aria-hidden="true"></div>
+    <!-- Faint twinkling stars while the room is still dark -->
+    <div class="dark-sparkles" aria-hidden="true">
+      <span class="dark-star s1"></span>
+      <span class="dark-star s2"></span>
+      <span class="dark-star s3"></span>
+      <span class="dark-star s4"></span>
+      <span class="dark-star s5"></span>
+    </div>
 
-      <button id="lights-button" class="lights-button" type="button">
-        <span class="bulb-icon" aria-hidden="true">
-          <span class="bulb-glass"></span>
-          <span class="bulb-base"></span>
-        </span>
-        <span class="lights-button-text">Turn on the lights</span>
-      </button>
-    </section>
+    <!-- Warm glow that expands outward once the lights are switched on -->
+    <div class="lights-overlay" id="lights-overlay" aria-hidden="true"></div>
 
-    <!-- =========================================================
+    <button id="lights-button" class="lights-button" type="button">
+      <span class="bulb-icon" aria-hidden="true">
+        <span class="bulb-glass"></span>
+        <span class="bulb-base"></span>
+      </span>
+      <span class="lights-button-text">Turn on the lights</span>
+    </button>
+  </section>
+
+  <!-- =========================================================
        SCREEN 3 — PARTY SCENE
        Hidden until the lights finish turning on, then revealed via
        the cinematic transition built in Part 3. Part 4 adds the
@@ -135,210 +126,165 @@
        sparkles, and confetti (confetti pieces are generated by
        script.js). The cake is added on top of this in a later part.
        ========================================================= -->
-    <section id="party-scene" class="screen screen-party" hidden>
-      <div class="party-ambient-glow" aria-hidden="true"></div>
+  <section id="party-scene" class="screen screen-party" hidden>
+    <div class="party-ambient-glow" aria-hidden="true"></div>
 
-      <!-- Soft floating glow blobs for extra depth (reuses the
+    <!-- Soft floating glow blobs for extra depth (reuses the
          countdown screen's driftOrb keyframes, new elements/colors) -->
-      <div class="party-glow-orbs" aria-hidden="true">
-        <span class="party-orb po-1"></span>
-        <span class="party-orb po-2"></span>
-      </div>
+    <div class="party-glow-orbs" aria-hidden="true">
+      <span class="party-orb po-1"></span>
+      <span class="party-orb po-2"></span>
+    </div>
 
-      <!-- Fairy lights strung along the top edge -->
-      <div class="fairy-lights" aria-hidden="true">
-        <span class="fairy-bulb" style="--i: 0"></span>
-        <span class="fairy-bulb" style="--i: 1"></span>
-        <span class="fairy-bulb" style="--i: 2"></span>
-        <span class="fairy-bulb" style="--i: 3"></span>
-        <span class="fairy-bulb" style="--i: 4"></span>
-        <span class="fairy-bulb" style="--i: 5"></span>
-        <span class="fairy-bulb" style="--i: 6"></span>
-        <span class="fairy-bulb" style="--i: 7"></span>
-        <span class="fairy-bulb" style="--i: 8"></span>
-        <span class="fairy-bulb" style="--i: 9"></span>
-      </div>
+    <!-- Fairy lights strung along the top edge -->
+    <div class="fairy-lights" aria-hidden="true">
+      <span class="fairy-bulb" style="--i:0"></span>
+      <span class="fairy-bulb" style="--i:1"></span>
+      <span class="fairy-bulb" style="--i:2"></span>
+      <span class="fairy-bulb" style="--i:3"></span>
+      <span class="fairy-bulb" style="--i:4"></span>
+      <span class="fairy-bulb" style="--i:5"></span>
+      <span class="fairy-bulb" style="--i:6"></span>
+      <span class="fairy-bulb" style="--i:7"></span>
+      <span class="fairy-bulb" style="--i:8"></span>
+      <span class="fairy-bulb" style="--i:9"></span>
+    </div>
 
-      <!-- Pastel bunting garland, hung just beneath the fairy lights -->
-      <div class="bunting" aria-hidden="true">
-        <span class="bunting-flag" style="--i: 0"></span>
-        <span class="bunting-flag" style="--i: 1"></span>
-        <span class="bunting-flag" style="--i: 2"></span>
-        <span class="bunting-flag" style="--i: 3"></span>
-        <span class="bunting-flag" style="--i: 4"></span>
-        <span class="bunting-flag" style="--i: 5"></span>
-        <span class="bunting-flag" style="--i: 6"></span>
-        <span class="bunting-flag" style="--i: 7"></span>
-        <span class="bunting-flag" style="--i: 8"></span>
-      </div>
+    <!-- Pastel bunting garland, hung just beneath the fairy lights -->
+    <div class="bunting" aria-hidden="true">
+      <span class="bunting-flag" style="--i:0"></span>
+      <span class="bunting-flag" style="--i:1"></span>
+      <span class="bunting-flag" style="--i:2"></span>
+      <span class="bunting-flag" style="--i:3"></span>
+      <span class="bunting-flag" style="--i:4"></span>
+      <span class="bunting-flag" style="--i:5"></span>
+      <span class="bunting-flag" style="--i:6"></span>
+      <span class="bunting-flag" style="--i:7"></span>
+      <span class="bunting-flag" style="--i:8"></span>
+    </div>
 
-      <!-- Floating balloons framing the scene -->
-      <div class="balloons" id="balloons-container" aria-hidden="true">
-        <div class="balloon balloon-1">
-          <span class="balloon-string"></span>
-        </div>
-        <div class="balloon balloon-2">
-          <span class="balloon-string"></span>
-        </div>
-        <div class="balloon balloon-3">
-          <span class="balloon-string"></span>
-        </div>
-        <div class="balloon balloon-4">
-          <span class="balloon-string"></span>
-        </div>
-        <div class="balloon balloon-5">
-          <span class="balloon-string"></span>
-        </div>
-        <div class="balloon balloon-6">
-          <span class="balloon-string"></span>
-        </div>
-        <div class="balloon balloon-7">
-          <span class="balloon-string"></span>
-        </div>
-      </div>
+    <!-- Floating balloons framing the scene -->
+    <div class="balloons" id="balloons-container" aria-hidden="true">
+      <div class="balloon balloon-1"><span class="balloon-string"></span></div>
+      <div class="balloon balloon-2"><span class="balloon-string"></span></div>
+      <div class="balloon balloon-3"><span class="balloon-string"></span></div>
+      <div class="balloon balloon-4"><span class="balloon-string"></span></div>
+      <div class="balloon balloon-5"><span class="balloon-string"></span></div>
+      <div class="balloon balloon-6"><span class="balloon-string"></span></div>
+      <div class="balloon balloon-7"><span class="balloon-string"></span></div>
+    </div>
 
-      <!-- Twinkling sparkles scattered across the room -->
-      <div class="sparkles" aria-hidden="true">
-        <span class="sparkle sp-1"></span>
-        <span class="sparkle sp-2"></span>
-        <span class="sparkle sp-3"></span>
-        <span class="sparkle sp-4"></span>
-        <span class="sparkle sp-5"></span>
-        <span class="sparkle sp-6"></span>
-        <span class="sparkle sp-7"></span>
-        <span class="sparkle sp-8"></span>
-      </div>
+    <!-- Twinkling sparkles scattered across the room -->
+    <div class="sparkles" aria-hidden="true">
+      <span class="sparkle sp-1"></span>
+      <span class="sparkle sp-2"></span>
+      <span class="sparkle sp-3"></span>
+      <span class="sparkle sp-4"></span>
+      <span class="sparkle sp-5"></span>
+      <span class="sparkle sp-6"></span>
+      <span class="sparkle sp-7"></span>
+      <span class="sparkle sp-8"></span>
+    </div>
 
-      <!-- Birthday cake centerpiece, topped with a single "21"-shaped
+    <!-- Birthday cake centerpiece, topped with a single "21"-shaped
          candle (not twenty-one separate candles) -->
-      <div class="cake" id="cake" aria-hidden="true">
-        <div class="cake-candle" id="cake-candle">
-          <div class="candle-flame" id="candle-flame">
-            <span class="flame-glow"></span>
-            <span class="flame-core"></span>
-          </div>
-          <span class="candle-wick"></span>
-          <span class="candle-numeral">21</span>
-        </div>
+    <div class="cake" id="cake" aria-hidden="true">
 
-        <div class="cake-layer cake-layer-top">
-          <span class="sprinkle sp-t1"></span>
-          <span class="sprinkle sp-t2"></span>
-          <span class="sprinkle sp-t3"></span>
-          <span class="sprinkle sp-t4"></span>
+      <div class="cake-candle" id="cake-candle">
+        <div class="candle-flame" id="candle-flame">
+          <span class="flame-glow"></span>
+          <span class="flame-core"></span>
         </div>
-
-        <div class="cake-layer cake-layer-bottom">
-          <span class="sprinkle sp-b1"></span>
-          <span class="sprinkle sp-b2"></span>
-          <span class="sprinkle sp-b3"></span>
-          <span class="sprinkle sp-b4"></span>
-          <span class="sprinkle sp-b5"></span>
-        </div>
-
-        <div class="cake-plate"></div>
+        <span class="candle-wick"></span>
+        <span class="candle-numeral">21</span>
       </div>
 
-      <!-- Trigger for the Make a Wish sequence (Part 6). Real,
+      <div class="cake-layer cake-layer-top">
+        <span class="sprinkle sp-t1"></span>
+        <span class="sprinkle sp-t2"></span>
+        <span class="sprinkle sp-t3"></span>
+        <span class="sprinkle sp-t4"></span>
+      </div>
+
+      <div class="cake-layer cake-layer-bottom">
+        <span class="sprinkle sp-b1"></span>
+        <span class="sprinkle sp-b2"></span>
+        <span class="sprinkle sp-b3"></span>
+        <span class="sprinkle sp-b4"></span>
+        <span class="sprinkle sp-b5"></span>
+      </div>
+
+      <div class="cake-plate"></div>
+    </div>
+
+    <!-- Trigger for the Make a Wish sequence (Part 6). Real,
          focusable button rather than relying on tapping the candle,
          so it stays keyboard- and screen-reader-accessible. -->
-      <button class="wish-button" id="wish-button" type="button">
-        <span class="wish-button-icon" aria-hidden="true"></span>
-        <span class="wish-button-text">Make a wish</span>
-      </button>
+    <button class="wish-button" id="wish-button" type="button">
+      <span class="wish-button-icon" aria-hidden="true"></span>
+      <span class="wish-button-text">Make a wish</span>
+    </button>
 
-      <!-- "Make a wish..." message, then a 3-2-1 countdown, shown
+    <!-- "Make a wish..." message, then a 3-2-1 countdown, shown
          above everything else while the candle is blown out -->
-      <div class="wish-overlay" id="wish-overlay" aria-live="polite">
-        <p class="wish-message" id="wish-message"></p>
-        <p class="wish-countdown" id="wish-countdown"></p>
-      </div>
+    <div class="wish-overlay" id="wish-overlay" aria-live="polite">
+      <p class="wish-message" id="wish-message"></p>
+      <p class="wish-countdown" id="wish-countdown"></p>
+    </div>
 
-      <!-- Birthday letter — appears automatically a moment after the
+    <!-- Birthday letter — appears automatically a moment after the
          celebration kicks in (Part 7 hands off to this). Lines are
          injected and typed out one at a time by script.js from the
          editable CONFIG.MESSAGES.letterLines array. -->
-      <div class="letter-overlay" id="letter-overlay">
-        <div class="letter-card">
-          <span class="letter-tape" aria-hidden="true"></span>
-          <p class="letter-eyebrow">A little note for you</p>
+    <div class="letter-overlay" id="letter-overlay">
+      <div class="letter-card">
+        <span class="letter-tape" aria-hidden="true"></span>
+        <p class="letter-eyebrow">A little note for you</p>
 
-          <!-- Full message for screen readers / reduced motion, read
+        <!-- Full message for screen readers / reduced motion, read
              all at once rather than character-by-character -->
-          <p class="sr-only" id="letter-sr-text"></p>
+        <p class="sr-only" id="letter-sr-text"></p>
 
-          <div class="letter-lines" id="letter-lines" aria-hidden="true"></div>
-        </div>
+        <div class="letter-lines" id="letter-lines" aria-hidden="true"></div>
       </div>
+    </div>
 
-      <!-- Final Memory — fades in once the letter finishes typing and
+    <!-- Final Memory — fades in once the letter finishes typing and
          its card has faded away. The photo and caption are both
          editable: swap assets/photo.jpg for a real picture, and set
          the caption text in CONFIG.MESSAGES.caption. -->
-      <div class="memory-overlay" id="memory-overlay">
-        <figure class="memory-frame">
-          <img
-            class="memory-photo"
-            id="memory-photo"
-            src="assets/photo.jpg"
-            alt="A favorite birthday memory"
-          />
-          <figcaption
-            dir="rtl"
-            style="unicode-bidi: plaintext"
-            class="memory-caption"
-            id="memory-caption"
-          ></figcaption>
-        </figure>
-      </div>
+    <div class="memory-overlay" id="memory-overlay">
+      <figure class="memory-frame">
+        <img class="memory-photo" id="memory-photo" src="assets/photo.jpg" alt="A favorite birthday memory" />
+        <figcaption class="memory-caption" id="memory-caption"></figcaption>
+      </figure>
+    </div>
 
-      <!-- Confetti pieces are generated and appended here by script.js,
+    <!-- Confetti pieces are generated and appended here by script.js,
          so the piece count/colors stay editable from CONFIG -->
-      <div
-        class="confetti-container"
-        id="confetti-container"
-        aria-hidden="true"
-      ></div>
-    </section>
+    <div class="confetti-container" id="confetti-container" aria-hidden="true"></div>
+  </section>
 
-    <!-- Switch sound effect, played when the lights button is pressed -->
-    <audio id="switch-sound" src="assets/switch.mp3" preload="auto"></audio>
+  <!-- Switch sound effect, played when the lights button is pressed -->
+  <audio id="switch-sound" src="assets/switch.mp3" preload="auto"></audio>
 
-    <!-- Candle blow-out sound effect, played when the wish countdown finishes -->
-    <audio id="blow-sound" src="assets/blow.mp3" preload="auto"></audio>
+  <!-- Candle blow-out sound effect, played when the wish countdown finishes -->
+  <audio id="blow-sound" src="assets/blow.mp3" preload="auto"></audio>
 
-    <!-- Birthday music, started once the candle is blown out and
+  <!-- Birthday music, started once the candle is blown out and
        looped for the rest of the celebration -->
-    <audio
-      id="birthday-music"
-      src="assets/music.mp3"
-      preload="auto"
-      loop
-    ></audio>
+  <audio id="birthday-music" src="assets/music.mp3" preload="auto" loop></audio>
 
-    <!-- Soft tick played on every second of the opening (Part 1) countdown -->
-    <audio
-      id="countdown-tick-sound"
-      src="assets/tick.mp3"
-      preload="auto"
-    ></audio>
+  <!-- Soft tick played on every second of the opening (Part 1) countdown -->
+  <audio id="countdown-tick-sound" src="assets/tick.mp3" preload="auto"></audio>
 
-    <!-- Ambient background music for the opening countdown screen —
+  <!-- Ambient background music for the opening countdown screen —
        starts once the countdown begins, stops the moment it finishes -->
-    <audio
-      id="countdown-music"
-      src="assets/countdown-music.mp3"
-      preload="auto"
-      loop
-    ></audio>
+  <audio id="countdown-music" src="assets/countdown-music.mp3" preload="auto" loop></audio>
 
-    <!-- Distinct beep played on each step of the "Make a wish" 3-2-1 countdown -->
-    <audio
-      id="wish-tick-sound"
-      src="assets/wish-tick.mp3"
-      preload="auto"
-    ></audio>
+  <!-- Distinct beep played on each step of the "Make a wish" 3-2-1 countdown -->
+  <audio id="wish-tick-sound" src="assets/wish-tick.mp3" preload="auto"></audio>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>

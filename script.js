@@ -15,7 +15,7 @@ const CONFIG = {
   // Target birthday date & time the countdown counts down to.
   // Format: 'YYYY-MM-DDTHH:MM:SS' (interpreted in the visitor's
   // local timezone). Change this single value to move the date.
-  TARGET_DATE: '2026-08-08T01:15:00',
+  TARGET_DATE: '2026-08-07T00:00:00',
 
   // Editable asset paths. Add to this object as later parts
   // introduce more images/sounds/music — keeps every path in one
@@ -146,6 +146,7 @@ const blowSoundEl = document.getElementById('blow-sound');
 const musicEl = document.getElementById('birthday-music');
 const countdownTickSoundEl = document.getElementById('countdown-tick-sound');
 const countdownMusicEl = document.getElementById('countdown-music');
+const countdownTouchHintEl = document.getElementById('countdown-touch-hint');
 const wishTickSoundEl = document.getElementById('wish-tick-sound');
 
 /* -------------------------------------------------------------
@@ -296,15 +297,30 @@ function stopCountdownMusic() {
 }
 
 /**
+ * Fades out the "Touch the screen" hint once the visitor has done
+ * exactly that. Safe to call more than once — adding a class that's
+ * already there is a no-op.
+ */
+function hideCountdownTouchHint() {
+  if (!countdownTouchHintEl) return;
+  countdownTouchHintEl.classList.add('is-hidden');
+}
+
+/**
  * Retried on the visitor's first click/tap/keypress anywhere on the
  * page. Browsers block audio.play() until a real interaction has
  * happened, so if the automatic attempt in startCountdown() got
  * silently blocked, this is what actually gets the music going —
  * whether that first interaction lands early or late in the
  * countdown, it starts playing (and keeps looping) from that point.
+ * Also dismisses the "Touch the screen" hint, since this is the
+ * exact interaction it was asking for.
  */
 function handleCountdownMusicUnlock() {
   if (!isCountdownRunning) return;
+
+  hideCountdownTouchHint();
+
   if (!countdownMusicEl || !countdownMusicEl.paused) return;
 
   playSound(countdownMusicEl);

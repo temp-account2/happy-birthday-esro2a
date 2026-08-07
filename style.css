@@ -10,38 +10,38 @@
    ------------------------------------------------------------- */
 :root {
   /* Palette — cute pastel: cream, blush pink, lavender, gold */
-  --color-cream: #fff8f0;
-  --color-cream-deep: #fbeedf;
-  --color-blush: #ffd7e6;
-  --color-blush-deep: #ffb8d2;
-  --color-lavender: #e6def9;
-  --color-lavender-deep: #d6c6f5;
-  --color-gold: #f0b94d;
-  --color-gold-soft: #f7d796;
-  --color-white: #ffffff;
+  --color-cream:      #FFF8F0;
+  --color-cream-deep:  #FBEEDF;
+  --color-blush:       #FFD7E6;
+  --color-blush-deep:  #FFB8D2;
+  --color-lavender:    #E6DEF9;
+  --color-lavender-deep: #D6C6F5;
+  --color-gold:         #F0B94D;
+  --color-gold-soft:    #F7D796;
+  --color-white:        #FFFFFF;
 
   /* Richer accents — used for the cake so it stands out clearly
      against the blush/lavender scene background rather than
      blending into it (same pastel family, deeper saturation) */
-  --color-raspberry: #f2678f;
-  --color-raspberry-deep: #e2436f;
-  --color-plum: #9b6fd1;
-  --color-plum-deep: #7c4fb0;
+  --color-raspberry:      #F2678F;
+  --color-raspberry-deep: #E2436F;
+  --color-plum:           #9B6FD1;
+  --color-plum-deep:      #7C4FB0;
 
   /* Text */
-  --color-ink: #4a3b52; /* deep plum-grey, softer than pure black */
-  --color-ink-soft: #8a7a92;
-  --color-ink-faint: #b7a9be;
+  --color-ink:        #4A3B52;   /* deep plum-grey, softer than pure black */
+  --color-ink-soft:   #8A7A92;
+  --color-ink-faint:  #B7A9BE;
 
   /* Fonts */
-  --font-display: "Baloo 2", ui-rounded, system-ui, sans-serif;
-  --font-body: "Quicksand", system-ui, sans-serif;
-  --font-script: "Caveat", cursive;
+  --font-display: 'Baloo 2', ui-rounded, system-ui, sans-serif;
+  --font-body:    'Quicksand', system-ui, sans-serif;
+  --font-script:  'Caveat', cursive;
 
   /* Shadows & glass */
-  --shadow-soft: 0 10px 30px rgba(180, 130, 170, 0.18);
-  --shadow-card: 0 14px 36px rgba(200, 150, 190, 0.22);
-  --glass-bg: rgba(255, 255, 255, 0.55);
+  --shadow-soft:  0 10px 30px rgba(180, 130, 170, 0.18);
+  --shadow-card:  0 14px 36px rgba(200, 150, 190, 0.22);
+  --glass-bg:     rgba(255, 255, 255, 0.55);
   --glass-border: rgba(255, 255, 255, 0.75);
 
   /* Timing */
@@ -57,8 +57,7 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   height: 100%;
 }
 
@@ -123,11 +122,7 @@ body {
   height: 380px;
   bottom: -120px;
   right: -80px;
-  background: radial-gradient(
-    circle,
-    var(--color-lavender-deep),
-    transparent 70%
-  );
+  background: radial-gradient(circle, var(--color-lavender-deep), transparent 70%);
   animation-duration: 20s;
   animation-delay: -4s;
 }
@@ -143,16 +138,9 @@ body {
 }
 
 @keyframes driftOrb {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(30px, -25px) scale(1.08);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.95);
-  }
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(30px, -25px) scale(1.08); }
+  66%      { transform: translate(-20px, 20px) scale(0.95); }
 }
 
 /* Content */
@@ -181,12 +169,7 @@ body {
   font-weight: 800;
   font-size: clamp(2.1rem, 6vw, 4rem);
   line-height: 1.1;
-  background: linear-gradient(
-    100deg,
-    var(--color-ink) 0%,
-    #a8628f 55%,
-    var(--color-gold) 100%
-  );
+  background: linear-gradient(100deg, var(--color-ink) 0%, #A8628F 55%, var(--color-gold) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -227,18 +210,10 @@ body {
   transform: translateY(-6px);
 }
 
-.countdown-card:nth-child(1) {
-  animation-delay: 0.05s;
-}
-.countdown-card:nth-child(2) {
-  animation-delay: 0.15s;
-}
-.countdown-card:nth-child(3) {
-  animation-delay: 0.25s;
-}
-.countdown-card:nth-child(4) {
-  animation-delay: 0.35s;
-}
+.countdown-card:nth-child(1) { animation-delay: 0.05s; }
+.countdown-card:nth-child(2) { animation-delay: 0.15s; }
+.countdown-card:nth-child(3) { animation-delay: 0.25s; }
+.countdown-card:nth-child(4) { animation-delay: 0.35s; }
 
 /* Tiny flame accent above each card — echoes the birthday
    candle that appears later in the experience */
@@ -256,12 +231,7 @@ body {
   width: 12px;
   height: 18px;
   transform: translateX(-50%);
-  background: radial-gradient(
-    circle at 50% 30%,
-    #fff3c4 0%,
-    var(--color-gold) 55%,
-    #e08a3c 100%
-  );
+  background: radial-gradient(circle at 50% 30%, #FFF3C4 0%, var(--color-gold) 55%, #E08A3C 100%);
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   filter: drop-shadow(0 0 6px rgba(240, 185, 77, 0.75));
   animation: flicker 2.2s ease-in-out infinite;
@@ -269,19 +239,10 @@ body {
 }
 
 @keyframes flicker {
-  0%,
-  100% {
-    transform: translateX(-50%) scale(1) rotate(0deg);
-  }
-  25% {
-    transform: translateX(-50%) scale(1.05, 0.95) rotate(-2deg);
-  }
-  50% {
-    transform: translateX(-50%) scale(0.95, 1.05) rotate(2deg);
-  }
-  75% {
-    transform: translateX(-50%) scale(1.02, 0.98) rotate(-1deg);
-  }
+  0%, 100% { transform: translateX(-50%) scale(1) rotate(0deg); }
+  25%      { transform: translateX(-50%) scale(1.05, 0.95) rotate(-2deg); }
+  50%      { transform: translateX(-50%) scale(0.95, 1.05) rotate(2deg); }
+  75%      { transform: translateX(-50%) scale(1.02, 0.98) rotate(-1deg); }
 }
 
 .countdown-number {
@@ -299,18 +260,9 @@ body {
 }
 
 @keyframes numberTick {
-  0% {
-    transform: scale(1);
-    color: var(--color-ink);
-  }
-  35% {
-    transform: scale(1.18);
-    color: var(--color-gold);
-  }
-  100% {
-    transform: scale(1);
-    color: var(--color-ink);
-  }
+  0%   { transform: scale(1);    color: var(--color-ink); }
+  35%  { transform: scale(1.18); color: var(--color-gold); }
+  100% { transform: scale(1);    color: var(--color-ink); }
 }
 
 .countdown-label {
@@ -330,18 +282,36 @@ body {
   color: var(--color-ink-soft);
 }
 
+/* Invites the visitor to tap/click — also what unlocks audio
+   playback in most browsers, so it disappears once that happens */
+.countdown-footer-2 {
+  margin-top: 0.6rem;
+  font-family: var(--font-script);
+  font-weight: 600;
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  color: var(--color-gold);
+  animation: touchHintPulse 2s ease-in-out infinite;
+  transition: opacity 0.6s var(--ease-soft), transform 0.6s var(--ease-soft);
+}
+
+@keyframes touchHintPulse {
+  0%, 100% { opacity: 0.7; }
+  50%      { opacity: 1; }
+}
+
+.countdown-footer-2.is-hidden {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: none;
+  pointer-events: none;
+}
+
 /* -------------------------------------------------------------
    4. SHARED KEYFRAMES
    ------------------------------------------------------------- */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* -------------------------------------------------------------
@@ -368,9 +338,7 @@ body {
    6. ACCESSIBILITY — reduced motion
    ------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
@@ -432,31 +400,11 @@ body {
   animation: twinkle 3.6s ease-in-out infinite;
 }
 
-.dark-star.s1 {
-  top: 18%;
-  left: 22%;
-  animation-delay: 0s;
-}
-.dark-star.s2 {
-  top: 30%;
-  left: 78%;
-  animation-delay: 0.7s;
-}
-.dark-star.s3 {
-  top: 68%;
-  left: 16%;
-  animation-delay: 1.4s;
-}
-.dark-star.s4 {
-  top: 76%;
-  left: 72%;
-  animation-delay: 2.1s;
-}
-.dark-star.s5 {
-  top: 46%;
-  left: 50%;
-  animation-delay: 2.8s;
-}
+.dark-star.s1 { top: 18%; left: 22%; animation-delay: 0s; }
+.dark-star.s2 { top: 30%; left: 78%; animation-delay: 0.7s; }
+.dark-star.s3 { top: 68%; left: 16%; animation-delay: 1.4s; }
+.dark-star.s4 { top: 76%; left: 72%; animation-delay: 2.1s; }
+.dark-star.s5 { top: 46%; left: 50%; animation-delay: 2.8s; }
 
 /* Stars settle once the lights are switched on — they'd be
    invisible against a lit room anyway */
@@ -467,15 +415,8 @@ body {
 }
 
 @keyframes twinkle {
-  0%,
-  100% {
-    opacity: 0;
-    transform: scale(0.6);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1);
-  }
+  0%, 100% { opacity: 0; transform: scale(0.6); }
+  50%      { opacity: 1; transform: scale(1); }
 }
 
 /* Warm glow that expands outward from the bulb when clicked,
@@ -508,27 +449,13 @@ body {
 /* A couple of quick flickers before settling, like an old bulb
    warming up — layered on top of the base opacity/scale transition */
 @keyframes bulbFlicker {
-  0% {
-    filter: brightness(0.3);
-  }
-  8% {
-    filter: brightness(1.3);
-  }
-  16% {
-    filter: brightness(0.5);
-  }
-  26% {
-    filter: brightness(1.15);
-  }
-  36% {
-    filter: brightness(0.7);
-  }
-  50% {
-    filter: brightness(1);
-  }
-  100% {
-    filter: brightness(1);
-  }
+  0%   { filter: brightness(0.3); }
+  8%   { filter: brightness(1.3); }
+  16%  { filter: brightness(0.5); }
+  26%  { filter: brightness(1.15); }
+  36%  { filter: brightness(0.7); }
+  50%  { filter: brightness(1); }
+  100% { filter: brightness(1); }
 }
 
 /* "Turn on the lights" button */
@@ -546,9 +473,7 @@ body {
   font-family: var(--font-display);
   color: var(--color-cream);
   animation: buttonPulse 2.6s ease-in-out infinite;
-  transition:
-    opacity 0.6s var(--ease-soft),
-    transform 0.6s var(--ease-soft);
+  transition: opacity 0.6s var(--ease-soft), transform 0.6s var(--ease-soft);
 }
 
 .lights-button:hover .bulb-glass,
@@ -574,13 +499,8 @@ body {
 }
 
 @keyframes buttonPulse {
-  0%,
-  100% {
-    filter: drop-shadow(0 0 0px rgba(240, 185, 77, 0));
-  }
-  50% {
-    filter: drop-shadow(0 0 18px rgba(240, 185, 77, 0.55));
-  }
+  0%, 100% { filter: drop-shadow(0 0 0px rgba(240, 185, 77, 0)); }
+  50%      { filter: drop-shadow(0 0 18px rgba(240, 185, 77, 0.55)); }
 }
 
 /* CSS-drawn lightbulb icon (kept as shapes rather than an emoji
@@ -601,19 +521,14 @@ body {
   height: 40px;
   transform: translateX(-50%);
   border-radius: 50%;
-  background: radial-gradient(
-    circle at 35% 30%,
-    #fff6dd,
-    var(--color-gold-soft) 55%,
-    var(--color-gold) 100%
-  );
+  background: radial-gradient(circle at 35% 30%, #FFF6DD, var(--color-gold-soft) 55%, var(--color-gold) 100%);
   box-shadow: 0 0 14px 2px rgba(240, 185, 77, 0.55);
   transition: box-shadow 0.4s var(--ease-soft);
 }
 
 .bulb-glass::after {
   /* Filament hint — tiny arc inside the bulb */
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -677,7 +592,7 @@ body {
   overflow: hidden;
   background: radial-gradient(
     circle at 50% 32%,
-    #fff3dc 0%,
+    #FFF3DC 0%,
     var(--color-blush) 45%,
     var(--color-lavender) 100%
   );
@@ -712,13 +627,8 @@ body {
 }
 
 @keyframes ambientPulse {
-  0%,
-  100% {
-    opacity: 0.7;
-  }
-  50% {
-    opacity: 1;
-  }
+  0%, 100% { opacity: 0.7; }
+  50%      { opacity: 1; }
 }
 
 /* Once the party scene has been revealed underneath it, the black
@@ -770,11 +680,7 @@ body {
   height: 340px;
   bottom: -90px;
   right: -70px;
-  background: radial-gradient(
-    circle,
-    var(--color-lavender-deep),
-    transparent 70%
-  );
+  background: radial-gradient(circle, var(--color-lavender-deep), transparent 70%);
   animation-delay: -6s;
 }
 
@@ -796,7 +702,7 @@ body {
 
 /* The wire the bulbs hang from */
 .fairy-lights::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 6px;
   left: 2%;
@@ -816,48 +722,24 @@ body {
   width: 10px;
   height: 14px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle at 35% 30%,
-    #fff8de,
-    var(--bulb-color, var(--color-gold-soft))
-  );
+  background: radial-gradient(circle at 35% 30%, #fff8de, var(--bulb-color, var(--color-gold-soft)));
   box-shadow: 0 0 8px 2px var(--bulb-glow, rgba(240, 185, 77, 0.6));
   animation: bulbTwinkle 2.4s ease-in-out infinite;
   animation-delay: calc(var(--i) * 0.25s);
 }
 
 /* Gentle zigzag so the string reads as a sagging garland */
-.fairy-bulb:nth-child(even) {
-  top: 8px;
-}
-.fairy-bulb:nth-child(odd) {
-  top: 2px;
-}
+.fairy-bulb:nth-child(even) { top: 8px; }
+.fairy-bulb:nth-child(odd)  { top: 2px; }
 
 /* Cycle bulbs through the pastel palette */
-.fairy-bulb:nth-child(3n + 1) {
-  --bulb-color: var(--color-gold-soft);
-  --bulb-glow: rgba(240, 185, 77, 0.65);
-}
-.fairy-bulb:nth-child(3n + 2) {
-  --bulb-color: var(--color-blush-deep);
-  --bulb-glow: rgba(255, 184, 210, 0.65);
-}
-.fairy-bulb:nth-child(3n) {
-  --bulb-color: var(--color-lavender-deep);
-  --bulb-glow: rgba(214, 198, 245, 0.65);
-}
+.fairy-bulb:nth-child(3n+1) { --bulb-color: var(--color-gold-soft);     --bulb-glow: rgba(240, 185, 77, 0.65); }
+.fairy-bulb:nth-child(3n+2) { --bulb-color: var(--color-blush-deep);    --bulb-glow: rgba(255, 184, 210, 0.65); }
+.fairy-bulb:nth-child(3n)   { --bulb-color: var(--color-lavender-deep); --bulb-glow: rgba(214, 198, 245, 0.65); }
 
 @keyframes bulbTwinkle {
-  0%,
-  100% {
-    opacity: 0.55;
-    filter: brightness(0.85);
-  }
-  50% {
-    opacity: 1;
-    filter: brightness(1.3);
-  }
+  0%, 100% { opacity: 0.55; filter: brightness(0.85); }
+  50%      { opacity: 1;    filter: brightness(1.3); }
 }
 
 /* -------------------------------------------------------------
@@ -885,24 +767,13 @@ body {
   animation-delay: calc(var(--i) * 0.15s);
 }
 
-.bunting-flag:nth-child(3n + 1) {
-  background: var(--color-blush-deep);
-}
-.bunting-flag:nth-child(3n + 2) {
-  background: var(--color-lavender-deep);
-}
-.bunting-flag:nth-child(3n) {
-  background: var(--color-gold);
-}
+.bunting-flag:nth-child(3n+1) { background: var(--color-blush-deep); }
+.bunting-flag:nth-child(3n+2) { background: var(--color-lavender-deep); }
+.bunting-flag:nth-child(3n)   { background: var(--color-gold); }
 
 @keyframes flagSway {
-  0%,
-  100% {
-    transform: rotate(-4deg);
-  }
-  50% {
-    transform: rotate(4deg);
-  }
+  0%, 100% { transform: rotate(-4deg); }
+  50%      { transform: rotate(4deg); }
 }
 
 /* -------------------------------------------------------------
@@ -919,11 +790,7 @@ body {
   position: absolute;
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   background:
-    radial-gradient(
-      circle at 32% 26%,
-      rgba(255, 255, 255, 0.85),
-      transparent 42%
-    ),
+    radial-gradient(circle at 32% 26%, rgba(255, 255, 255, 0.85), transparent 42%),
     var(--balloon-color, var(--color-blush));
   box-shadow:
     inset -6px -10px 14px rgba(0, 0, 0, 0.08),
@@ -934,7 +801,7 @@ body {
 
 /* Knot at the base of the balloon */
 .balloon::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -8px;
   left: 50%;
@@ -952,99 +819,56 @@ body {
   left: 50%;
   width: 1px;
   height: 84px;
-  background: linear-gradient(
-    rgba(120, 100, 120, 0.5),
-    rgba(120, 100, 120, 0.1)
-  );
+  background: linear-gradient(rgba(120, 100, 120, 0.5), rgba(120, 100, 120, 0.1));
   transform-origin: top center;
   animation: stringSway 4s ease-in-out infinite;
 }
 
 @keyframes floatBalloon {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-2deg);
-  }
-  50% {
-    transform: translateY(-22px) rotate(2deg);
-  }
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50%      { transform: translateY(-22px) rotate(2deg); }
 }
 
 @keyframes stringSway {
-  0%,
-  100% {
-    transform: translateX(-50%) rotate(-3deg);
-  }
-  50% {
-    transform: translateX(-50%) rotate(3deg);
-  }
+  0%, 100% { transform: translateX(-50%) rotate(-3deg); }
+  50%      { transform: translateX(-50%) rotate(3deg); }
 }
 
 /* Individual balloon placement, size, color and timing */
 .balloon-1 {
-  left: 6%;
-  bottom: 6%;
-  width: 64px;
-  height: 78px;
+  left: 6%; bottom: 6%; width: 64px; height: 78px;
   --balloon-color: var(--color-blush);
-  --float-duration: 6.5s;
-  --float-delay: 0s;
+  --float-duration: 6.5s; --float-delay: 0s;
 }
 .balloon-2 {
-  left: 16%;
-  bottom: 1%;
-  width: 50px;
-  height: 62px;
+  left: 16%; bottom: 1%; width: 50px; height: 62px;
   --balloon-color: var(--color-gold-soft);
-  --float-duration: 7.2s;
-  --float-delay: -1.2s;
+  --float-duration: 7.2s; --float-delay: -1.2s;
 }
 .balloon-3 {
-  left: 79%;
-  bottom: 8%;
-  width: 70px;
-  height: 86px;
+  left: 79%; bottom: 8%; width: 70px; height: 86px;
   --balloon-color: var(--color-lavender-deep);
-  --float-duration: 6.8s;
-  --float-delay: -2.4s;
+  --float-duration: 6.8s; --float-delay: -2.4s;
 }
 .balloon-4 {
-  left: 90%;
-  bottom: 2%;
-  width: 50px;
-  height: 62px;
+  left: 90%; bottom: 2%; width: 50px; height: 62px;
   --balloon-color: var(--color-blush-deep);
-  --float-duration: 7.6s;
-  --float-delay: -0.6s;
+  --float-duration: 7.6s; --float-delay: -0.6s;
 }
 .balloon-5 {
-  left: 47%;
-  bottom: -4%;
-  width: 60px;
-  height: 74px;
+  left: 47%; bottom: -4%; width: 60px; height: 74px;
   --balloon-color: var(--color-cream-deep);
-  --float-duration: 8s;
-  --float-delay: -3s;
+  --float-duration: 8s; --float-delay: -3s;
 }
 .balloon-6 {
-  left: 3%;
-  bottom: 34%;
-  width: 40px;
-  height: 50px;
-  opacity: 0.85;
+  left: 3%; bottom: 34%; width: 40px; height: 50px; opacity: 0.85;
   --balloon-color: var(--color-gold-soft);
-  --float-duration: 6s;
-  --float-delay: -1.8s;
+  --float-duration: 6s; --float-delay: -1.8s;
 }
 .balloon-7 {
-  left: 93%;
-  bottom: 30%;
-  width: 44px;
-  height: 54px;
-  opacity: 0.85;
+  left: 93%; bottom: 30%; width: 44px; height: 54px; opacity: 0.85;
   --balloon-color: var(--color-lavender-deep);
-  --float-duration: 6.4s;
-  --float-delay: -2.8s;
+  --float-duration: 6.4s; --float-delay: -2.8s;
 }
 
 /* -------------------------------------------------------------
@@ -1061,78 +885,25 @@ body {
   position: absolute;
   width: 12px;
   height: 12px;
-  background: radial-gradient(
-    circle,
-    #fff 0%,
-    var(--color-gold-soft) 60%,
-    transparent 100%
-  );
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    100% 50%,
-    61% 65%,
-    50% 100%,
-    39% 65%,
-    0% 50%,
-    39% 35%
-  );
+  background: radial-gradient(circle, #fff 0%, var(--color-gold-soft) 60%, transparent 100%);
+  clip-path: polygon(50% 0%, 61% 35%, 100% 50%, 61% 65%, 50% 100%, 39% 65%, 0% 50%, 39% 35%);
   opacity: 0;
   animation: sparkleTwinkle 3s ease-in-out infinite;
 }
 
 @keyframes sparkleTwinkle {
-  0%,
-  100% {
-    opacity: 0;
-    transform: scale(0.4) rotate(0deg);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1) rotate(25deg);
-  }
+  0%, 100% { opacity: 0;   transform: scale(0.4) rotate(0deg); }
+  50%      { opacity: 1;   transform: scale(1) rotate(25deg); }
 }
 
-.sp-1 {
-  top: 20%;
-  left: 12%;
-  animation-delay: 0s;
-}
-.sp-2 {
-  top: 14%;
-  left: 62%;
-  animation-delay: 0.4s;
-}
-.sp-3 {
-  top: 34%;
-  left: 88%;
-  animation-delay: 0.8s;
-}
-.sp-4 {
-  top: 58%;
-  left: 8%;
-  animation-delay: 1.2s;
-}
-.sp-5 {
-  top: 66%;
-  left: 94%;
-  animation-delay: 1.6s;
-}
-.sp-6 {
-  top: 46%;
-  left: 40%;
-  animation-delay: 2s;
-}
-.sp-7 {
-  top: 80%;
-  left: 55%;
-  animation-delay: 2.4s;
-}
-.sp-8 {
-  top: 28%;
-  left: 40%;
-  animation-delay: 2.8s;
-}
+.sp-1 { top: 20%; left: 12%; animation-delay: 0s; }
+.sp-2 { top: 14%; left: 62%; animation-delay: 0.4s; }
+.sp-3 { top: 34%; left: 88%; animation-delay: 0.8s; }
+.sp-4 { top: 58%; left: 8%;  animation-delay: 1.2s; }
+.sp-5 { top: 66%; left: 94%; animation-delay: 1.6s; }
+.sp-6 { top: 46%; left: 40%; animation-delay: 2s; }
+.sp-7 { top: 80%; left: 55%; animation-delay: 2.4s; }
+.sp-8 { top: 28%; left: 40%; animation-delay: 2.8s; }
 
 /* -------------------------------------------------------------
    4.6 Confetti — pieces are appended here by script.js so the
@@ -1161,48 +932,23 @@ body {
 }
 
 @keyframes confettiFall {
-  0% {
-    transform: translateY(-10vh) rotate(0deg);
-    opacity: 0;
-  }
-  8% {
-    opacity: 0.95;
-  }
-  92% {
-    opacity: 0.95;
-  }
-  100% {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
+  0%   { transform: translateY(-10vh) rotate(0deg);   opacity: 0; }
+  8%   { opacity: 0.95; }
+  92%  { opacity: 0.95; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
 }
 
 /* -------------------------------------------------------------
    4.7 Responsive adjustments
    ------------------------------------------------------------- */
 @media (max-width: 560px) {
-  .bunting-flag {
-    width: 15px;
-    height: 20px;
-  }
-  .fairy-bulb {
-    width: 8px;
-    height: 11px;
-  }
+  .bunting-flag { width: 15px; height: 20px; }
+  .fairy-bulb   { width: 8px; height: 11px; }
 
-  .balloon-6,
-  .balloon-7 {
-    display: none;
-  } /* keep smaller screens uncluttered */
+  .balloon-6, .balloon-7 { display: none; } /* keep smaller screens uncluttered */
 
-  .balloon-1 {
-    width: 52px;
-    height: 64px;
-  }
-  .balloon-3 {
-    width: 56px;
-    height: 68px;
-  }
+  .balloon-1 { width: 52px; height: 64px; }
+  .balloon-3 { width: 56px; height: 68px; }
 }
 
 /* =============================================================
@@ -1233,7 +979,7 @@ body {
    reads clearly against the blush/lavender scene background
    instead of blending into it */
 .cake::before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -6%;
   left: 50%;
@@ -1241,25 +987,15 @@ body {
   width: 300px;
   max-width: 130%;
   height: 200px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255, 255, 255, 0.6) 0%,
-    transparent 72%
-  );
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.6) 0%, transparent 72%);
   filter: blur(6px);
   z-index: -1;
   pointer-events: none;
 }
 
 @keyframes cakeEntrance {
-  from {
-    opacity: 0;
-    transform: translate(-50%, 30px) scale(0.88);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, 0) scale(1);
-  }
+  from { opacity: 0; transform: translate(-50%, 30px) scale(0.88); }
+  to   { opacity: 1; transform: translate(-50%, 0) scale(1); }
 }
 
 /* -------------------------------------------------------------
@@ -1285,17 +1021,13 @@ body {
 /* Scalloped frosting along the top edge of each layer, drawn with
    a repeating radial gradient rather than an image */
 .cake-layer::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -13px;
   left: 0;
   right: 0;
   height: 22px;
-  background-image: radial-gradient(
-    circle at 10px 10px,
-    var(--frosting-color, #fff) 10px,
-    transparent 11px
-  );
+  background-image: radial-gradient(circle at 10px 10px, var(--frosting-color, #fff) 10px, transparent 11px);
   background-size: 20px 20px;
   background-repeat: repeat-x;
 }
@@ -1304,24 +1036,16 @@ body {
   width: 190px;
   height: 78px;
   margin-top: -12px;
-  background: linear-gradient(
-    180deg,
-    var(--color-raspberry) 0%,
-    var(--color-raspberry-deep) 100%
-  );
-  --frosting-color: #fffdf8;
+  background: linear-gradient(180deg, var(--color-raspberry) 0%, var(--color-raspberry-deep) 100%);
+  --frosting-color: #FFFDF8;
 }
 
 .cake-layer-top {
   width: 148px;
   height: 64px;
   margin-top: -10px;
-  background: linear-gradient(
-    180deg,
-    var(--color-plum) 0%,
-    var(--color-plum-deep) 100%
-  );
-  --frosting-color: #fff8e8;
+  background: linear-gradient(180deg, var(--color-plum) 0%, var(--color-plum-deep) 100%);
+  --frosting-color: #FFF8E8;
 }
 
 /* Sprinkles scattered across each layer */
@@ -1332,61 +1056,16 @@ body {
   border-radius: 2px;
 }
 
-.sp-t1 {
-  top: 18px;
-  left: 22%;
-  background: var(--color-gold);
-  transform: rotate(20deg);
-}
-.sp-t2 {
-  top: 30px;
-  left: 48%;
-  background: #fffdf8;
-  transform: rotate(-15deg);
-}
-.sp-t3 {
-  top: 22px;
-  left: 70%;
-  background: var(--color-gold-soft);
-  transform: rotate(35deg);
-}
-.sp-t4 {
-  top: 38px;
-  left: 34%;
-  background: #fffdf8;
-  transform: rotate(-30deg);
-}
+.sp-t1 { top: 18px; left: 22%; background: var(--color-gold);      transform: rotate(20deg); }
+.sp-t2 { top: 30px; left: 48%; background: #FFFDF8;                transform: rotate(-15deg); }
+.sp-t3 { top: 22px; left: 70%; background: var(--color-gold-soft); transform: rotate(35deg); }
+.sp-t4 { top: 38px; left: 34%; background: #FFFDF8;                transform: rotate(-30deg); }
 
-.sp-b1 {
-  top: 18px;
-  left: 12%;
-  background: var(--color-gold-soft);
-  transform: rotate(10deg);
-}
-.sp-b2 {
-  top: 32px;
-  left: 28%;
-  background: #fffdf8;
-  transform: rotate(-20deg);
-}
-.sp-b3 {
-  top: 20px;
-  left: 50%;
-  background: var(--color-gold);
-  transform: rotate(25deg);
-}
-.sp-b4 {
-  top: 36px;
-  left: 68%;
-  background: #fffdf8;
-  transform: rotate(-10deg);
-}
-.sp-b5 {
-  top: 22px;
-  left: 84%;
-  background: var(--color-gold-soft);
-  transform: rotate(15deg);
-}
+.sp-b1 { top: 18px; left: 12%; background: var(--color-gold-soft); transform: rotate(10deg); }
+.sp-b2 { top: 32px; left: 28%; background: #FFFDF8;                transform: rotate(-20deg); }
+.sp-b3 { top: 20px; left: 50%; background: var(--color-gold);      transform: rotate(25deg); }
+.sp-b4 { top: 36px; left: 68%; background: #FFFDF8;                transform: rotate(-10deg); }
+.sp-b5 { top: 22px; left: 84%; background: var(--color-gold-soft); transform: rotate(15deg); }
 
 /* -------------------------------------------------------------
    5.2 The "21" candle — a single numeral-shaped candle, not
@@ -1404,18 +1083,14 @@ body {
 /* Soft glow directly behind the numeral + flame, so the candle
    stays legible regardless of what's behind it in the scene */
 .cake-candle::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 8%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 160%;
   height: 160%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.65),
-    transparent 70%
-  );
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.65), transparent 70%);
   filter: blur(6px);
   z-index: -1;
   pointer-events: none;
@@ -1433,7 +1108,7 @@ body {
      raspberry for strong contrast against any part of the scene */
   background: repeating-linear-gradient(
     135deg,
-    #fffdf8 0 6px,
+    #FFFDF8 0 6px,
     var(--color-raspberry-deep) 6px 12px
   );
   -webkit-background-clip: text;
@@ -1470,12 +1145,7 @@ body {
   height: 26px;
   transform: translateX(-50%);
   transform-origin: bottom center;
-  background: radial-gradient(
-    circle at 50% 30%,
-    #fff6c4 0%,
-    var(--color-gold) 55%,
-    #e08a3c 100%
-  );
+  background: radial-gradient(circle at 50% 30%, #FFF6C4 0%, var(--color-gold) 55%, #E08A3C 100%);
   border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
   filter: drop-shadow(0 0 10px rgba(240, 185, 77, 0.85));
   animation: flicker 1.8s ease-in-out infinite;
@@ -1486,24 +1156,13 @@ body {
   inset: -14px;
   z-index: -1;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 220, 140, 0.55),
-    transparent 70%
-  );
+  background: radial-gradient(circle, rgba(255, 220, 140, 0.55), transparent 70%);
   animation: flameGlowPulse 1.8s ease-in-out infinite;
 }
 
 @keyframes flameGlowPulse {
-  0%,
-  100% {
-    opacity: 0.6;
-    transform: scale(0.9);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
+  0%, 100% { opacity: 0.6; transform: scale(0.9); }
+  50%      { opacity: 1;   transform: scale(1.1); }
 }
 
 /* -------------------------------------------------------------
@@ -1514,88 +1173,38 @@ body {
     bottom: 7%;
   }
 
-  .cake-plate {
-    width: 170px;
-    height: 20px;
-  }
-  .cake-layer-bottom {
-    width: 148px;
-    height: 62px;
-  }
-  .cake-layer-top {
-    width: 116px;
-    height: 50px;
-  }
-  .candle-numeral {
-    font-size: 2.1rem;
-  }
-  .candle-flame {
-    width: 16px;
-    height: 24px;
-  }
-  .candle-flame .flame-core {
-    width: 14px;
-    height: 20px;
-  }
+  .cake-plate        { width: 170px; height: 20px; }
+  .cake-layer-bottom { width: 148px; height: 62px; }
+  .cake-layer-top    { width: 116px; height: 50px; }
+  .candle-numeral    { font-size: 2.1rem; }
+  .candle-flame      { width: 16px; height: 24px; }
+  .candle-flame .flame-core { width: 14px; height: 20px; }
 }
 
 /* Extra-small phones: shrink further and pull the cake up slightly
    so the plate/candle can't clip against the bottom edge */
 @media (max-width: 360px) {
-  .cake {
-    bottom: 5%;
-  }
+  .cake { bottom: 5%; }
 
-  .cake-plate {
-    width: 138px;
-    height: 17px;
-  }
-  .cake-layer-bottom {
-    width: 120px;
-    height: 52px;
-  }
-  .cake-layer-top {
-    width: 94px;
-    height: 42px;
-  }
-  .candle-numeral {
-    font-size: 1.7rem;
-  }
-  .candle-flame {
-    width: 13px;
-    height: 20px;
-  }
-  .candle-flame .flame-core {
-    width: 11px;
-    height: 16px;
-  }
-  .candle-wick {
-    height: 8px;
-  }
+  .cake-plate        { width: 138px; height: 17px; }
+  .cake-layer-bottom { width: 120px; height: 52px; }
+  .cake-layer-top    { width: 94px;  height: 42px; }
+  .candle-numeral    { font-size: 1.7rem; }
+  .candle-flame      { width: 13px; height: 20px; }
+  .candle-flame .flame-core { width: 11px; height: 16px; }
+  .candle-wick       { height: 8px; }
 }
 
 /* Short viewports (landscape phones) — keep the whole cake in
    frame rather than letting it run under the fairy lights/bunting */
 @media (max-height: 480px) {
-  .cake {
-    bottom: 4%;
-  }
-  .cake-plate {
-    width: 150px;
-    height: 18px;
-  }
-  .cake-layer-bottom {
-    width: 132px;
-    height: 54px;
-  }
-  .cake-layer-top {
-    width: 104px;
-    height: 44px;
-  }
-  .candle-numeral {
-    font-size: 1.9rem;
-  }
+  .cake { bottom: 4%; }
+  .cake-plate        { width: 150px; height: 18px; }
+  .cake-layer-bottom { width: 132px; height: 54px; }
+  .cake-layer-top    { width: 104px; height: 44px; }
+  .candle-numeral    { font-size: 1.9rem; }
 }
+
 
 /* =============================================================
    PART 6 — MAKE A WISH
@@ -1621,7 +1230,7 @@ body {
   cursor: pointer;
   padding: 0.7rem 1.5rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, #fffdf8, var(--color-gold-soft));
+  background: linear-gradient(135deg, #FFFDF8, var(--color-gold-soft));
   color: var(--color-ink);
   font-family: var(--font-display);
   font-weight: 700;
@@ -1639,20 +1248,12 @@ body {
   animation:
     wishButtonEntrance 1s var(--ease-soft) 1.8s both,
     buttonPulse 2.6s ease-in-out 2.8s infinite;
-  transition:
-    opacity 0.5s var(--ease-soft),
-    transform 0.35s var(--ease-soft);
+  transition: opacity 0.5s var(--ease-soft), transform 0.35s var(--ease-soft);
 }
 
 @keyframes wishButtonEntrance {
-  from {
-    opacity: 0;
-    transform: translate(-50%, 18px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
+  from { opacity: 0; transform: translate(-50%, 18px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
 }
 
 .wish-button:hover {
@@ -1674,31 +1275,15 @@ body {
   pointer-events: none;
   transform: translateX(-50%) translateY(10px) scale(0.92);
   animation: none;
-  transition:
-    opacity 0.5s var(--ease-soft),
-    transform 0.5s var(--ease-soft);
+  transition: opacity 0.5s var(--ease-soft), transform 0.5s var(--ease-soft);
 }
 
 .wish-button-icon {
   width: 13px;
   height: 13px;
   flex-shrink: 0;
-  background: radial-gradient(
-    circle,
-    #fff 0%,
-    var(--color-gold) 70%,
-    transparent 100%
-  );
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    100% 50%,
-    61% 65%,
-    50% 100%,
-    39% 65%,
-    0% 50%,
-    39% 35%
-  );
+  background: radial-gradient(circle, #fff 0%, var(--color-gold) 70%, transparent 100%);
+  clip-path: polygon(50% 0%, 61% 35%, 100% 50%, 61% 65%, 50% 100%, 39% 65%, 0% 50%, 39% 35%);
 }
 
 /* -------------------------------------------------------------
@@ -1751,18 +1336,9 @@ body {
 }
 
 @keyframes wishNumberPulse {
-  0% {
-    transform: scale(0.4);
-    opacity: 0;
-  }
-  45% {
-    transform: scale(1.18);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+  0%   { transform: scale(0.4); opacity: 0; }
+  45%  { transform: scale(1.18); opacity: 1; }
+  100% { transform: scale(1);   opacity: 1; }
 }
 
 /* -------------------------------------------------------------
@@ -1779,22 +1355,10 @@ body {
 }
 
 @keyframes blowOutFlame {
-  0% {
-    transform: translateX(-50%) scale(1) rotate(0deg);
-    opacity: 1;
-  }
-  30% {
-    transform: translateX(-38%) scale(0.7) rotate(20deg);
-    opacity: 0.8;
-  }
-  70% {
-    transform: translateX(-18%) scale(0.28) rotate(32deg);
-    opacity: 0.3;
-  }
-  100% {
-    transform: translateX(-8%) scale(0) rotate(38deg);
-    opacity: 0;
-  }
+  0%   { transform: translateX(-50%) scale(1)    rotate(0deg);  opacity: 1; }
+  30%  { transform: translateX(-38%) scale(0.7)  rotate(20deg); opacity: 0.8; }
+  70%  { transform: translateX(-18%) scale(0.28) rotate(32deg); opacity: 0.3; }
+  100% { transform: translateX(-8%)  scale(0)    rotate(38deg); opacity: 0; }
 }
 
 /* Smoke puffs — spawned by script.js right where the flame was,
@@ -1805,12 +1369,7 @@ body {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.85),
-    rgba(190, 185, 195, 0.35) 60%,
-    transparent 80%
-  );
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.85), rgba(190, 185, 195, 0.35) 60%, transparent 80%);
   filter: blur(2px);
   opacity: 0;
   pointer-events: none;
@@ -1818,30 +1377,17 @@ body {
 }
 
 @keyframes smokeRise {
-  0% {
-    transform: translate(-50%, 0) scale(0.6);
-    opacity: 0.75;
-  }
-  60% {
-    opacity: 0.4;
-  }
-  100% {
-    transform: translate(-50%, -48px) scale(1.9);
-    opacity: 0;
-  }
+  0%   { transform: translate(-50%, 0) scale(0.6);    opacity: 0.75; }
+  60%  { opacity: 0.4; }
+  100% { transform: translate(-50%, -48px) scale(1.9); opacity: 0; }
 }
 
 /* -------------------------------------------------------------
    6.4 Responsive adjustments
    ------------------------------------------------------------- */
 @media (max-width: 560px) {
-  .wish-button {
-    bottom: 2%;
-    padding: 0.6rem 1.25rem;
-  }
-  .wish-message {
-    padding: 0.45rem 1.1rem;
-  }
+  .wish-button   { bottom: 2%; padding: 0.6rem 1.25rem; }
+  .wish-message  { padding: 0.45rem 1.1rem; }
 }
 
 /* =============================================================
@@ -1929,9 +1475,9 @@ body {
   max-width: 560px;
   max-height: 78vh;
   overflow-y: auto;
-  background: linear-gradient(160deg, #fffdf8 0%, var(--color-cream) 100%);
+  background: linear-gradient(160deg, #FFFDF8 0%, var(--color-cream) 100%);
   border-radius: 22px;
-  padding: clamp(1.6rem, 5vw, 2.75rem) clamp(1.1rem, 4vw, 2.5rem);
+  padding: clamp(2rem, 5vw, 2.75rem) clamp(1.5rem, 4vw, 2.5rem);
   box-shadow:
     0 24px 60px rgba(120, 60, 100, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -1957,7 +1503,7 @@ body {
   font-size: clamp(1.15rem, 2.6vw, 1.5rem);
   color: var(--color-gold);
   text-align: center;
-  margin-bottom: 0.7rem;
+  margin-bottom: 1.1rem;
 }
 
 .letter-lines {
@@ -1974,9 +1520,7 @@ body {
   color: var(--color-ink);
   opacity: 0;
   transform: translateY(10px);
-  transition:
-    opacity 0.6s var(--ease-soft),
-    transform 0.6s var(--ease-soft);
+  transition: opacity 0.6s var(--ease-soft), transform 0.6s var(--ease-soft);
 }
 
 .letter-line.is-visible {
@@ -2005,14 +1549,8 @@ body {
 }
 
 @keyframes cursorBlink {
-  0%,
-  49% {
-    opacity: 1;
-  }
-  50%,
-  100% {
-    opacity: 0;
-  }
+  0%, 49%  { opacity: 1; }
+  50%, 100% { opacity: 0; }
 }
 
 /* -------------------------------------------------------------
@@ -2065,7 +1603,7 @@ body {
 .memory-frame {
   position: relative;
   width: min(360px, 82vw);
-  background: #fffdf8;
+  background: #FFFDF8;
   border-radius: 10px;
   padding: 14px 14px 22px;
   box-shadow:
@@ -2073,9 +1611,7 @@ body {
     0 2px 0 rgba(255, 255, 255, 0.8) inset;
   transform: rotate(-2.5deg) scale(0.92);
   opacity: 0;
-  transition:
-    opacity 1.2s var(--ease-soft),
-    transform 1.2s var(--ease-soft);
+  transition: opacity 1.2s var(--ease-soft), transform 1.2s var(--ease-soft);
 }
 
 .memory-overlay.is-visible .memory-frame {
