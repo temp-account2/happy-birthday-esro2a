@@ -33,20 +33,19 @@ const CONFIG = {
   // Editable timing values (all in milliseconds), grouped here so
   // pacing can be tuned without hunting through the logic below.
   TIMINGS: {
-    blackScreenFadeMs:   1400, // how long the fade-to-black transition takes
-    lightsOnDurationMs:  2600, // how long the "gradually light the room" effect takes
-    sceneRevealDelayMs:   900, // pause after the party scene starts fading in, before the lit screen starts dissolving away
+    blackScreenFadeMs: 1400, // how long the fade-to-black transition takes
+    lightsOnDurationMs: 1000, // how long the "gradually light the room" effect takes
+    sceneRevealDelayMs: 900, // pause after the party scene starts fading in, before the lit screen starts dissolving away
     modeScreenFadeOutMs: 1800, // how long that final dissolve takes (must match the .scene-revealed CSS transition)
-    wishMessageDurationMs: 1600, // how long "Make a wish..." shows before the 3-2-1 countdown starts
-    wishCountdownStepMs:    900, // how long each of 3 / 2 / 1 stays on screen
-    blowOutAnimMs:          1500, // how long the flame-out + smoke animation runs before handing off
-    letterRevealDelayMs:   3000, // pause after the celebration kicks in before the letter card fades in
-    typewriterCharMs:        35, // how long each typed character takes to appear
-    typewriterLinePauseMs:   500, // pause between one line finishing and the next one starting
-    letterFadeOutMs:        1000, // how long the letter card takes to fade away once it's finished
-    memoryRevealDelayMs:     400, // pause after the letter is gone before the photo starts fading in
+    wishMessageDurationMs: 3000, // how long "Make a wish..." shows before the 3-2-1 countdown starts
+    wishCountdownStepMs: 1500, // how long each of 3 / 2 / 1 stays on screen
+    blowOutAnimMs: 1500, // how long the flame-out + smoke animation runs before handing off
+    letterRevealDelayMs: 3000, // pause after the celebration kicks in before the letter card fades in
+    typewriterCharMs: 100, // how long each typed character takes to appear
+    typewriterLinePauseMs: 1100, // pause between one line finishing and the next one starting
+    letterFadeOutMs: 2000, // how long the letter card takes to fade away once it's finished
+    memoryRevealDelayMs: 400, // pause after the letter is gone before the photo starts fading in
   },
-
   // Editable decoration values for the party scene (Part 4). The
   // fixed decorations (balloons, fairy lights, bunting, sparkles)
   // live directly in index.html/style.css; confetti is generated
@@ -85,22 +84,23 @@ const CONFIG = {
   // letter (Part 8), and final photo caption (Part 9) are all
   // implemented below, so this stays the single place to edit copy.
   MESSAGES: {
-    wishText: 'Make a wish...',
-    wishCountdownSteps: ['3', '2', '1'],
+    wishText: "Blow the candle and make a wish...",
+    wishCountdownSteps: ["3", "2", "1"],
 
     // Each string becomes its own typed-out line in the letter card.
     // Keep lines reasonably short so they read comfortably on mobile.
     letterLines: [
-      'Happy 21st Birthday!',
-      "Twenty-one looks incredible on you.",
-      "Here's to late nights, big dreams, and everything wonderful still ahead.",
-      'Wishing you a year as bright and joyful as you are.',
-      'With all my love,',
-      '— Me',
+      "I don't think a simple Happy Birthday could ever express everything I want to say so I made this little surprise instead So… Happy Birthday to the most inspiring and incredible person I know \u2764\uFE0F",
+      "I hope this year brings you endless smiles, unforgettable memories and every dream your heart holds",
+      "and brings you the same happiness you've brought into my life",
+      "Keep shining, keep dreaming, and never lose your beautiful smile.",
+      "\u2764\uFE0F ديماً فخور بيكي. ",
+      "Have the most wonderful birthday ever! \u{1F382} \u{2728} \u{1F60D}",
     ],
 
     // Shown beneath the final photo.
-    caption: 'One of my favorite memories with you \u2728',
+    caption:
+      "متفتكريش يعني عشان بقي عندك 21 سنة بقيتي كبيرة لسة بشوفك كده\u00A0\u200F\u{1F90F}\u{1F3FB}",
   },
 };
 
