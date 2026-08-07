@@ -11,39 +11,40 @@
    Edit the values in this block to customize the site.
    ------------------------------------------------------------- */
 const CONFIG = {
+
   // Target birthday date & time the countdown counts down to.
   // Format: 'YYYY-MM-DDTHH:MM:SS' (interpreted in the visitor's
   // local timezone). Change this single value to move the date.
-  TARGET_DATE: "2026-08-10T00:00:00",
+  TARGET_DATE: '2026-08-08T01:15:00',
 
   // Editable asset paths. Add to this object as later parts
   // introduce more images/sounds/music — keeps every path in one
   // easy-to-edit place.
   ASSETS: {
-    switchSound: "assets/switch.mp3",
-    blowSound: "assets/blow.mp3",
-    music: "assets/music.mp3",
-    photo: "assets/photo.jpg",
-    countdownTick: "assets/tick.mp3", // Part 1's opening countdown, ticks every second
-    countdownMusic: "assets/countdown-music.mp3", // Part 1's opening countdown, ambient loop
-    wishTick: "assets/wish-tick.mp3", // Part 6's 3-2-1 "Make a wish" countdown
+    switchSound:   'assets/switch.mp3',
+    blowSound:     'assets/blow.mp3',
+    music:         'assets/music.mp3',
+    photo:         'assets/photo.jpg',
+    countdownTick:  'assets/tick.mp3',          // Part 1's opening countdown, ticks every second
+    countdownMusic: 'assets/countdown-music.mp3', // Part 1's opening countdown, ambient loop
+    wishTick:       'assets/wish-tick.mp3',       // Part 6's 3-2-1 "Make a wish" countdown
   },
 
   // Editable timing values (all in milliseconds), grouped here so
   // pacing can be tuned without hunting through the logic below.
   TIMINGS: {
-    blackScreenFadeMs: 1400, // how long the fade-to-black transition takes
-    lightsOnDurationMs: 1000, // how long the "gradually light the room" effect takes
-    sceneRevealDelayMs: 900, // pause after the party scene starts fading in, before the lit screen starts dissolving away
+    blackScreenFadeMs:   1400, // how long the fade-to-black transition takes
+    lightsOnDurationMs:  2600, // how long the "gradually light the room" effect takes
+    sceneRevealDelayMs:   900, // pause after the party scene starts fading in, before the lit screen starts dissolving away
     modeScreenFadeOutMs: 1800, // how long that final dissolve takes (must match the .scene-revealed CSS transition)
-    wishMessageDurationMs: 3000, // how long "Make a wish..." shows before the 3-2-1 countdown starts
-    wishCountdownStepMs: 1500, // how long each of 3 / 2 / 1 stays on screen
-    blowOutAnimMs: 1500, // how long the flame-out + smoke animation runs before handing off
-    letterRevealDelayMs: 3000, // pause after the celebration kicks in before the letter card fades in
-    typewriterCharMs: 100, // how long each typed character takes to appear
-    typewriterLinePauseMs: 1100, // pause between one line finishing and the next one starting
-    letterFadeOutMs: 2000, // how long the letter card takes to fade away once it's finished
-    memoryRevealDelayMs: 400, // pause after the letter is gone before the photo starts fading in
+    wishMessageDurationMs: 1600, // how long "Make a wish..." shows before the 3-2-1 countdown starts
+    wishCountdownStepMs:    900, // how long each of 3 / 2 / 1 stays on screen
+    blowOutAnimMs:          1500, // how long the flame-out + smoke animation runs before handing off
+    letterRevealDelayMs:   3000, // pause after the celebration kicks in before the letter card fades in
+    typewriterCharMs:        35, // how long each typed character takes to appear
+    typewriterLinePauseMs:   500, // pause between one line finishing and the next one starting
+    letterFadeOutMs:        1000, // how long the letter card takes to fade away once it's finished
+    memoryRevealDelayMs:     400, // pause after the letter is gone before the photo starts fading in
   },
 
   // Editable decoration values for the party scene (Part 4). The
@@ -52,55 +53,54 @@ const CONFIG = {
   // at runtime, so its variety and volume are configurable here.
   DECOR: {
     confettiColors: [
-      "#FFB8D2", // blush deep
-      "#F0B94D", // gold
-      "#D6C6F5", // lavender deep
-      "#FFF8F0", // cream
-      "#F7D796", // gold soft
+      '#FFB8D2', // blush deep
+      '#F0B94D', // gold
+      '#D6C6F5', // lavender deep
+      '#FFF8F0', // cream
+      '#F7D796', // gold soft
     ],
     initialConfettiCount: 40,
-    confettiFallDurationRange: [4, 8], // seconds, min/max
-    confettiFallDelayRange: [0, 6], // seconds, min/max (negative offsets so pieces start mid-fall)
-    confettiSizeRange: [6, 12], // pixels, min/max
+    confettiFallDurationRange: [4, 8],   // seconds, min/max
+    confettiFallDelayRange:    [0, 6],   // seconds, min/max (negative offsets so pieces start mid-fall)
+    confettiSizeRange:         [6, 12],  // pixels, min/max
 
     // Celebration (Part 7): extra decoration spawned once the
     // candle is blown out, on top of what's already in the scene.
     celebrationConfettiCount: 60,
-    celebrationBalloonCount: 6,
+    celebrationBalloonCount:  6,
     balloonColors: [
-      "#FFD7E6", // blush
-      "#FFB8D2", // blush deep
-      "#F7D796", // gold soft
-      "#D6C6F5", // lavender deep
-      "#FBEEDF", // cream deep
-      "#F2678F", // raspberry — echoes the cake for a festive pop
+      '#FFD7E6', // blush
+      '#FFB8D2', // blush deep
+      '#F7D796', // gold soft
+      '#D6C6F5', // lavender deep
+      '#FBEEDF', // cream deep
+      '#F2678F', // raspberry — echoes the cake for a festive pop
     ],
-    balloonSizeRange: [38, 62], // pixels, width min/max (height follows at ~1.24x)
-    balloonFloatDurationRange: [5, 8], // seconds, min/max
-    balloonFloatDelayRange: [0, 3], // seconds, min/max (negative offsets so pieces start mid-float)
+    balloonSizeRange:     [38, 62],  // pixels, width min/max (height follows at ~1.24x)
+    balloonFloatDurationRange: [5, 8],   // seconds, min/max
+    balloonFloatDelayRange:    [0, 3],   // seconds, min/max (negative offsets so pieces start mid-float)
   },
 
   // Editable text content. The wish sequence (Part 6), birthday
   // letter (Part 8), and final photo caption (Part 9) are all
   // implemented below, so this stays the single place to edit copy.
   MESSAGES: {
-    wishText: "Blow the candle and make a wish...",
-    wishCountdownSteps: ["3", "2", "1"],
+    wishText: 'Make a wish...',
+    wishCountdownSteps: ['3', '2', '1'],
 
     // Each string becomes its own typed-out line in the letter card.
     // Keep lines reasonably short so they read comfortably on mobile.
     letterLines: [
-      "I don't think a simple Happy Birthday could ever express everything I want to say so I made this little surprise instead So… Happy Birthday to the most inspiring and incredible person I know \u2764\uFE0F",
-      "I hope this year brings you endless smiles, unforgettable memories and every dream your heart holds",
-      "and brings you the same happiness you've brought into my life",
-      "Keep shining, keep dreaming, and never lose your beautiful smile.",
-      "\u2764\uFE0F ديماً فخور بيكي. ",
-      "Have the most wonderful birthday ever! \u{1F382} \u{2728} \u{1F60D}",
+      'Happy 21st Birthday!',
+      "Twenty-one looks incredible on you.",
+      "Here's to late nights, big dreams, and everything wonderful still ahead.",
+      'Wishing you a year as bright and joyful as you are.',
+      'With all my love,',
+      '— Me',
     ],
 
     // Shown beneath the final photo.
-    caption:
-      "متفتكريش يعني عشان بقي عندك 21 سنة بقيتي كبيرة لسة بشوفك كده\u00A0\u200F\u{1F90F}\u{1F3FB}",
+    caption: 'One of my favorite memories with you \u2728',
   },
 };
 
@@ -108,79 +108,85 @@ const CONFIG = {
    COUNTDOWN — STATE & ELEMENT REFERENCES
    ------------------------------------------------------------- */
 const countdownEls = {
-  screen: document.getElementById("countdown-screen"),
-  days: document.getElementById("count-days"),
-  hours: document.getElementById("count-hours"),
-  minutes: document.getElementById("count-minutes"),
-  seconds: document.getElementById("count-seconds"),
+  screen:  document.getElementById('countdown-screen'),
+  days:    document.getElementById('count-days'),
+  hours:   document.getElementById('count-hours'),
+  minutes: document.getElementById('count-minutes'),
+  seconds: document.getElementById('count-seconds'),
 };
 
 // Cache of previously rendered values, used to only trigger the
 // little "tick" pulse animation on units that actually changed.
-const previousValues = {
-  days: null,
-  hours: null,
-  minutes: null,
-  seconds: null,
-};
+const previousValues = { days: null, hours: null, minutes: null, seconds: null };
 
 let countdownIntervalId = null;
+
+// Whether the opening countdown is currently the active scene. Used to
+// gate the music "unlock" retry below so it can't accidentally restart
+// the countdown track after the countdown has already finished.
+let isCountdownRunning = false;
+
+// Browsers block audio.play() until the visitor has interacted with the
+// page at least once. The first attempt (at page load) can silently
+// fail as a result, so these events give it a second chance the moment
+// a real interaction happens — regardless of how much time is left.
+const COUNTDOWN_MUSIC_UNLOCK_EVENTS = ['click', 'touchstart', 'keydown'];
 
 /* -------------------------------------------------------------
    BIRTHDAY MODE — STATE & ELEMENT REFERENCES
    ------------------------------------------------------------- */
 const birthdayModeEls = {
-  screen: document.getElementById("birthday-mode-screen"),
-  lightsButton: document.getElementById("lights-button"),
-  lightsOverlay: document.getElementById("lights-overlay"),
+  screen:       document.getElementById('birthday-mode-screen'),
+  lightsButton: document.getElementById('lights-button'),
+  lightsOverlay: document.getElementById('lights-overlay'),
 };
 
-const switchSoundEl = document.getElementById("switch-sound");
-const blowSoundEl = document.getElementById("blow-sound");
-const musicEl = document.getElementById("birthday-music");
-const countdownTickSoundEl = document.getElementById("countdown-tick-sound");
-const countdownMusicEl = document.getElementById("countdown-music");
-const wishTickSoundEl = document.getElementById("wish-tick-sound");
+const switchSoundEl = document.getElementById('switch-sound');
+const blowSoundEl = document.getElementById('blow-sound');
+const musicEl = document.getElementById('birthday-music');
+const countdownTickSoundEl = document.getElementById('countdown-tick-sound');
+const countdownMusicEl = document.getElementById('countdown-music');
+const wishTickSoundEl = document.getElementById('wish-tick-sound');
 
 /* -------------------------------------------------------------
    PARTY SCENE — STATE & ELEMENT REFERENCES
    ------------------------------------------------------------- */
 const partySceneEls = {
-  screen: document.getElementById("party-scene"),
-  confettiContainer: document.getElementById("confetti-container"),
-  balloonsContainer: document.getElementById("balloons-container"),
+  screen:            document.getElementById('party-scene'),
+  confettiContainer: document.getElementById('confetti-container'),
+  balloonsContainer: document.getElementById('balloons-container'),
 };
 
 /* -------------------------------------------------------------
    CAKE & MAKE-A-WISH — STATE & ELEMENT REFERENCES
    ------------------------------------------------------------- */
 const cakeEls = {
-  candleFlame: document.getElementById("candle-flame"),
+  candleFlame: document.getElementById('candle-flame'),
 };
 
 const wishEls = {
-  button: document.getElementById("wish-button"),
-  overlay: document.getElementById("wish-overlay"),
-  message: document.getElementById("wish-message"),
-  countdown: document.getElementById("wish-countdown"),
+  button:    document.getElementById('wish-button'),
+  overlay:   document.getElementById('wish-overlay'),
+  message:   document.getElementById('wish-message'),
+  countdown: document.getElementById('wish-countdown'),
 };
 
 /* -------------------------------------------------------------
    BIRTHDAY LETTER — STATE & ELEMENT REFERENCES
    ------------------------------------------------------------- */
 const letterEls = {
-  overlay: document.getElementById("letter-overlay"),
-  linesContainer: document.getElementById("letter-lines"),
-  srText: document.getElementById("letter-sr-text"),
+  overlay:        document.getElementById('letter-overlay'),
+  linesContainer: document.getElementById('letter-lines'),
+  srText:         document.getElementById('letter-sr-text'),
 };
 
 /* -------------------------------------------------------------
    FINAL MEMORY — STATE & ELEMENT REFERENCES
    ------------------------------------------------------------- */
 const memoryEls = {
-  overlay: document.getElementById("memory-overlay"),
-  photo: document.getElementById("memory-photo"),
-  caption: document.getElementById("memory-caption"),
+  overlay: document.getElementById('memory-overlay'),
+  photo:   document.getElementById('memory-photo'),
+  caption: document.getElementById('memory-caption'),
 };
 
 /* -------------------------------------------------------------
@@ -191,7 +197,7 @@ const memoryEls = {
  * Pads a number to at least 2 digits, e.g. 4 -> "04".
  */
 function padTwoDigits(value) {
-  return String(Math.max(value, 0)).padStart(2, "0");
+  return String(Math.max(value, 0)).padStart(2, '0');
 }
 
 /**
@@ -207,9 +213,9 @@ function getTimeRemaining() {
   const totalSeconds = Math.floor(totalMs / 1000);
 
   return {
-    total: totalMs,
-    days: Math.floor(totalSeconds / 86400),
-    hours: Math.floor((totalSeconds % 86400) / 3600),
+    total:   totalMs,
+    days:    Math.floor(totalSeconds / 86400),
+    hours:   Math.floor((totalSeconds % 86400) / 3600),
     minutes: Math.floor((totalSeconds % 3600) / 60),
     seconds: totalSeconds % 60,
   };
@@ -228,11 +234,11 @@ function renderUnit(el, unitKey, value) {
     // Only pulse after the first paint, so the page doesn't
     // flash on initial load.
     if (previousValues[unitKey] !== null) {
-      el.classList.remove("tick");
+      el.classList.remove('tick');
       // Force reflow so the animation can be re-triggered on
       // consecutive changes of the same unit.
       void el.offsetWidth;
-      el.classList.add("tick");
+      el.classList.add('tick');
     }
   }
 
@@ -247,10 +253,10 @@ function renderUnit(el, unitKey, value) {
 function updateCountdown() {
   const remaining = getTimeRemaining();
 
-  renderUnit(countdownEls.days, "days", remaining.days);
-  renderUnit(countdownEls.hours, "hours", remaining.hours);
-  renderUnit(countdownEls.minutes, "minutes", remaining.minutes);
-  renderUnit(countdownEls.seconds, "seconds", remaining.seconds);
+  renderUnit(countdownEls.days, 'days', remaining.days);
+  renderUnit(countdownEls.hours, 'hours', remaining.hours);
+  renderUnit(countdownEls.minutes, 'minutes', remaining.minutes);
+  renderUnit(countdownEls.seconds, 'seconds', remaining.seconds);
 
   if (remaining.total <= 0) {
     clearInterval(countdownIntervalId);
@@ -267,19 +273,41 @@ function updateCountdown() {
  * Birthday Mode: a fullscreen fade to black.
  */
 function onCountdownComplete() {
+  isCountdownRunning = false;
   stopCountdownMusic();
   showBirthdayModeScreen();
 }
 
 /**
- * Pauses and rewinds the countdown's background music. Broken out
- * into its own helper (rather than just calling .pause()) so every
- * stop point resets playback position the same way.
+ * Pauses and rewinds the countdown's background music, and stops
+ * listening for the "unlock" interaction below (there's no longer
+ * anything for it to start). Broken out into its own helper (rather
+ * than just calling .pause()) so every stop point resets playback
+ * position the same way.
  */
 function stopCountdownMusic() {
+  COUNTDOWN_MUSIC_UNLOCK_EVENTS.forEach((eventName) => {
+    document.removeEventListener(eventName, handleCountdownMusicUnlock);
+  });
+
   if (!countdownMusicEl) return;
   countdownMusicEl.pause();
   countdownMusicEl.currentTime = 0;
+}
+
+/**
+ * Retried on the visitor's first click/tap/keypress anywhere on the
+ * page. Browsers block audio.play() until a real interaction has
+ * happened, so if the automatic attempt in startCountdown() got
+ * silently blocked, this is what actually gets the music going —
+ * whether that first interaction lands early or late in the
+ * countdown, it starts playing (and keeps looping) from that point.
+ */
+function handleCountdownMusicUnlock() {
+  if (!isCountdownRunning) return;
+  if (!countdownMusicEl || !countdownMusicEl.paused) return;
+
+  playSound(countdownMusicEl);
 }
 
 /**
@@ -292,17 +320,26 @@ function startCountdown() {
   if (initialRemaining.total <= 0) {
     // Target date already passed when the page loaded — skip
     // straight to Birthday Mode, so the countdown music never starts.
-    renderUnit(countdownEls.days, "days", 0);
-    renderUnit(countdownEls.hours, "hours", 0);
-    renderUnit(countdownEls.minutes, "minutes", 0);
-    renderUnit(countdownEls.seconds, "seconds", 0);
+    renderUnit(countdownEls.days, 'days', 0);
+    renderUnit(countdownEls.hours, 'hours', 0);
+    renderUnit(countdownEls.minutes, 'minutes', 0);
+    renderUnit(countdownEls.seconds, 'seconds', 0);
     onCountdownComplete();
     return;
   }
 
+  isCountdownRunning = true;
   updateCountdown();
   countdownIntervalId = setInterval(updateCountdown, 1000);
+
+  // First attempt — works immediately in browsers that allow it.
   playSound(countdownMusicEl);
+
+  // Fallback — catches the case where the attempt above was blocked,
+  // retrying the moment the visitor actually interacts with the page.
+  COUNTDOWN_MUSIC_UNLOCK_EVENTS.forEach((eventName) => {
+    document.addEventListener(eventName, handleCountdownMusicUnlock);
+  });
 }
 
 /* -------------------------------------------------------------
@@ -323,13 +360,13 @@ function showBirthdayModeScreen() {
   // the starting (opacity: 0) state and actually animates to it
   // rather than snapping straight to the end state.
   void screen.offsetWidth;
-  screen.classList.add("is-visible");
+  screen.classList.add('is-visible');
 
   // Once the black screen has fully covered the viewport, stop
   // rendering the countdown screen underneath — keeps it out of the
   // tab order and off-screen for anyone scrolling.
   window.setTimeout(() => {
-    countdownEls.screen.style.display = "none";
+    countdownEls.screen.style.display = 'none';
   }, CONFIG.TIMINGS.blackScreenFadeMs);
 }
 
@@ -344,7 +381,7 @@ function playSound(audioEl) {
   audioEl.currentTime = 0;
   const playPromise = audioEl.play();
 
-  if (playPromise && typeof playPromise.catch === "function") {
+  if (playPromise && typeof playPromise.catch === 'function') {
     playPromise.catch(() => {
       /* Playback blocked or interrupted — fail silently. */
     });
@@ -363,7 +400,7 @@ function handleLightsButtonClick() {
   lightsButton.disabled = true;
 
   playSound(switchSoundEl);
-  screen.classList.add("lights-on");
+  screen.classList.add('lights-on');
 
   window.setTimeout(() => {
     revealBirthdayScene();
@@ -393,19 +430,14 @@ function randomFrom(list) {
  * confetti "more lively" without any structural changes here.
  */
 function createConfettiPiece() {
-  const {
-    confettiColors,
-    confettiFallDurationRange,
-    confettiFallDelayRange,
-    confettiSizeRange,
-  } = CONFIG.DECOR;
+  const { confettiColors, confettiFallDurationRange, confettiFallDelayRange, confettiSizeRange } = CONFIG.DECOR;
 
-  const piece = document.createElement("span");
-  piece.className = "confetti-piece";
+  const piece = document.createElement('span');
+  piece.className = 'confetti-piece';
 
   // Roughly half square/rectangular, half circular, for variety.
   const isCircle = Math.random() > 0.5;
-  if (isCircle) piece.classList.add("is-circle");
+  if (isCircle) piece.classList.add('is-circle');
 
   const size = randomBetween(confettiSizeRange[0], confettiSizeRange[1]);
   const height = isCircle ? size : size * 1.6;
@@ -443,18 +475,13 @@ function spawnConfetti(count) {
  * CSS is needed for this to float and sway correctly.
  */
 function createBalloon() {
-  const {
-    balloonColors,
-    balloonSizeRange,
-    balloonFloatDurationRange,
-    balloonFloatDelayRange,
-  } = CONFIG.DECOR;
+  const { balloonColors, balloonSizeRange, balloonFloatDurationRange, balloonFloatDelayRange } = CONFIG.DECOR;
 
-  const balloon = document.createElement("div");
-  balloon.className = "balloon";
+  const balloon = document.createElement('div');
+  balloon.className = 'balloon';
 
-  const string = document.createElement("span");
-  string.className = "balloon-string";
+  const string = document.createElement('span');
+  string.className = 'balloon-string';
   balloon.appendChild(string);
 
   const width = randomBetween(balloonSizeRange[0], balloonSizeRange[1]);
@@ -464,15 +491,9 @@ function createBalloon() {
   balloon.style.bottom = `${randomBetween(-4, 30)}%`;
   balloon.style.width = `${width}px`;
   balloon.style.height = `${height}px`;
-  balloon.style.setProperty("--balloon-color", randomFrom(balloonColors));
-  balloon.style.setProperty(
-    "--float-duration",
-    `${randomBetween(balloonFloatDurationRange[0], balloonFloatDurationRange[1])}s`,
-  );
-  balloon.style.setProperty(
-    "--float-delay",
-    `-${randomBetween(balloonFloatDelayRange[0], balloonFloatDelayRange[1])}s`,
-  );
+  balloon.style.setProperty('--balloon-color', randomFrom(balloonColors));
+  balloon.style.setProperty('--float-duration', `${randomBetween(balloonFloatDurationRange[0], balloonFloatDurationRange[1])}s`);
+  balloon.style.setProperty('--float-delay', `-${randomBetween(balloonFloatDelayRange[0], balloonFloatDelayRange[1])}s`);
 
   return balloon;
 }
@@ -509,18 +530,18 @@ function revealBirthdayScene() {
   // Force reflow so the fade/zoom-in transition actually animates
   // from its starting state instead of snapping straight to visible.
   void sceneScreen.offsetWidth;
-  sceneScreen.classList.add("is-visible");
+  sceneScreen.classList.add('is-visible');
 
   // Let the scene establish itself for a beat before the lit screen
   // starts dissolving away — makes the reveal feel intentional
   // rather than an instant swap.
   window.setTimeout(() => {
-    birthdayModeEls.screen.classList.add("scene-revealed");
+    birthdayModeEls.screen.classList.add('scene-revealed');
 
     // Once fully dissolved, stop rendering the birthday-mode screen
     // so it can't intercept clicks or scrolling anymore.
     window.setTimeout(() => {
-      birthdayModeEls.screen.style.display = "none";
+      birthdayModeEls.screen.style.display = 'none';
     }, CONFIG.TIMINGS.modeScreenFadeOutMs);
   }, CONFIG.TIMINGS.sceneRevealDelayMs);
 }
@@ -538,13 +559,13 @@ function handleWishButtonClick() {
 
   // Prevent double-triggering while the sequence plays out.
   button.disabled = true;
-  button.classList.add("is-hidden");
+  button.classList.add('is-hidden');
 
   message.textContent = CONFIG.MESSAGES.wishText;
   message.hidden = false;
   wishEls.countdown.hidden = true;
 
-  overlay.classList.add("is-visible");
+  overlay.classList.add('is-visible');
 
   window.setTimeout(() => {
     runWishCountdown(CONFIG.MESSAGES.wishCountdownSteps, 0);
@@ -574,9 +595,9 @@ function runWishCountdown(steps, index) {
 
   // Re-trigger the pulse animation on every step, the same way the
   // countdown screen's digit "tick" pulse works in Part 1.
-  countdown.classList.remove("pulse");
+  countdown.classList.remove('pulse');
   void countdown.offsetWidth;
-  countdown.classList.add("pulse");
+  countdown.classList.add('pulse');
 
   playSound(wishTickSoundEl);
 
@@ -591,12 +612,12 @@ function runWishCountdown(steps, index) {
  * from the DOM once that animation finishes.
  */
 function createSmokeWisp(offsetX, delaySeconds) {
-  const wisp = document.createElement("span");
-  wisp.className = "smoke-wisp";
+  const wisp = document.createElement('span');
+  wisp.className = 'smoke-wisp';
   wisp.style.left = `calc(50% + ${offsetX}px)`;
   wisp.style.animationDelay = `${delaySeconds}s`;
 
-  wisp.addEventListener("animationend", () => wisp.remove());
+  wisp.addEventListener('animationend', () => wisp.remove());
 
   return wisp;
 }
@@ -611,10 +632,10 @@ function blowOutCandle() {
   const { overlay } = wishEls;
   const { candleFlame } = cakeEls;
 
-  overlay.classList.remove("is-visible");
+  overlay.classList.remove('is-visible');
 
   playSound(blowSoundEl);
-  candleFlame.classList.add("is-blown-out");
+  candleFlame.classList.add('is-blown-out');
 
   const wispFragment = document.createDocumentFragment();
   wispFragment.appendChild(createSmokeWisp(-3, 0));
@@ -638,7 +659,7 @@ function blowOutCandle() {
 function onCandleBlownOut() {
   const { screen: sceneScreen } = partySceneEls;
 
-  sceneScreen.classList.add("is-celebrating");
+  sceneScreen.classList.add('is-celebrating');
 
   spawnConfetti(CONFIG.DECOR.celebrationConfettiCount);
   spawnBalloons(CONFIG.DECOR.celebrationBalloonCount);
@@ -663,9 +684,9 @@ function onCandleBlownOut() {
 function showLetter() {
   const { overlay, srText } = letterEls;
 
-  srText.textContent = CONFIG.MESSAGES.letterLines.join(" ");
+  srText.textContent = CONFIG.MESSAGES.letterLines.join(' ');
 
-  overlay.classList.add("is-visible");
+  overlay.classList.add('is-visible');
   typeLetterLine(0);
 }
 
@@ -689,14 +710,14 @@ function typeLetterLine(index) {
 
   const fullText = lines[index];
 
-  const lineEl = document.createElement("p");
-  lineEl.className = "letter-line";
+  const lineEl = document.createElement('p');
+  lineEl.className = 'letter-line';
 
-  const textSpan = document.createElement("span");
-  textSpan.className = "letter-line-text";
+  const textSpan = document.createElement('span');
+  textSpan.className = 'letter-line-text';
 
-  const cursor = document.createElement("span");
-  cursor.className = "letter-cursor";
+  const cursor = document.createElement('span');
+  cursor.className = 'letter-cursor';
 
   lineEl.appendChild(textSpan);
   lineEl.appendChild(cursor);
@@ -705,7 +726,7 @@ function typeLetterLine(index) {
   // Force reflow so the fade/slide-in transition actually animates
   // rather than snapping straight to visible.
   void lineEl.offsetWidth;
-  lineEl.classList.add("is-visible");
+  lineEl.classList.add('is-visible');
 
   let charIndex = 0;
   const typeIntervalId = window.setInterval(() => {
@@ -714,7 +735,7 @@ function typeLetterLine(index) {
 
     if (charIndex >= fullText.length) {
       window.clearInterval(typeIntervalId);
-      cursor.classList.add("is-done");
+      cursor.classList.add('is-done');
 
       window.setTimeout(() => {
         typeLetterLine(index + 1);
@@ -731,7 +752,7 @@ function typeLetterLine(index) {
  * about the party scene itself is touched here.
  */
 function onLetterComplete() {
-  letterEls.overlay.classList.remove("is-visible");
+  letterEls.overlay.classList.remove('is-visible');
 
   window.setTimeout(() => {
     showFinalMemory();
@@ -752,17 +773,14 @@ function showFinalMemory() {
   const { overlay, caption } = memoryEls;
 
   caption.textContent = CONFIG.MESSAGES.caption;
-  overlay.classList.add("is-visible");
+  overlay.classList.add('is-visible');
 }
 
 /* -------------------------------------------------------------
    INIT
    ------------------------------------------------------------- */
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   startCountdown();
-  birthdayModeEls.lightsButton.addEventListener(
-    "click",
-    handleLightsButtonClick,
-  );
-  wishEls.button.addEventListener("click", handleWishButtonClick);
+  birthdayModeEls.lightsButton.addEventListener('click', handleLightsButtonClick);
+  wishEls.button.addEventListener('click', handleWishButtonClick);
 });
