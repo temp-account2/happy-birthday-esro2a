@@ -15,7 +15,7 @@ const CONFIG = {
   // Target birthday date & time the countdown counts down to.
   // Format: 'YYYY-MM-DDTHH:MM:SS' (interpreted in the visitor's
   // local timezone). Change this single value to move the date.
-  TARGET_DATE: '2026-08-08T00:50:00',
+  TARGET_DATE: '2026-08-10T00:00:00',
 
   // Editable asset paths. Add to this object as later parts
   // introduce more images/sounds/music — keeps every path in one
@@ -101,7 +101,7 @@ const CONFIG = {
 
     // Shown beneath the final photo.
     caption:
-      "متفتكريش يعني عشان بقي عندك 21 سنة بقيتي كبيرة لسة بشوفك كده\u00A0\u200F\u{1F90F}\u{1F3FB}",
+      "متفتكريش يعني عشان بقي عندك 21 سنة بقيتي كبيرة لسة بشوفك بنوتة صغنونة\u00A0\u200F\u{1F90F}\u{1F3FB}",
   },
 };
 
