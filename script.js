@@ -15,7 +15,7 @@ const CONFIG = {
   // Target birthday date & time the countdown counts down to.
   // Format: 'YYYY-MM-DDTHH:MM:SS' (interpreted in the visitor's
   // local timezone). Change this single value to move the date.
-  TARGET_DATE: '2026-08-08T01:47:00',
+  TARGET_DATE: '2026-08-08T00:50:00',
 
   // Editable asset paths. Add to this object as later parts
   // introduce more images/sounds/music — keeps every path in one
@@ -33,19 +33,20 @@ const CONFIG = {
   // Editable timing values (all in milliseconds), grouped here so
   // pacing can be tuned without hunting through the logic below.
   TIMINGS: {
-    blackScreenFadeMs: 1400, // how long the fade-to-black transition takes
-    lightsOnDurationMs: 1000, // how long the "gradually light the room" effect takes
-    sceneRevealDelayMs: 900, // pause after the party scene starts fading in, before the lit screen starts dissolving away
+    blackScreenFadeMs:   1400, // how long the fade-to-black transition takes
+    lightsOnDurationMs:  1000, // how long the "gradually light the room" effect takes
+    sceneRevealDelayMs:   900, // pause after the party scene starts fading in, before the lit screen starts dissolving away
     modeScreenFadeOutMs: 1800, // how long that final dissolve takes (must match the .scene-revealed CSS transition)
     wishMessageDurationMs: 3000, // how long "Make a wish..." shows before the 3-2-1 countdown starts
-    wishCountdownStepMs: 1500, // how long each of 3 / 2 / 1 stays on screen
-    blowOutAnimMs: 1500, // how long the flame-out + smoke animation runs before handing off
-    letterRevealDelayMs: 3000, // pause after the celebration kicks in before the letter card fades in
-    typewriterCharMs: 100, // how long each typed character takes to appear
+    wishCountdownStepMs:   1500, // how long each of 3 / 2 / 1 stays on screen
+    blowOutAnimMs:          1500, // how long the flame-out + smoke animation runs before handing off
+    letterRevealDelayMs:   3000, // pause after the celebration kicks in before the letter card fades in
+    typewriterCharMs:       100, // how long each typed character takes to appear
     typewriterLinePauseMs: 1100, // pause between one line finishing and the next one starting
-    letterFadeOutMs: 2000, // how long the letter card takes to fade away once it's finished
-    memoryRevealDelayMs: 400, // pause after the letter is gone before the photo starts fading in
+    letterFadeOutMs:        2000, // how long the letter card takes to fade away once it's finished
+    memoryRevealDelayMs:     400, // pause after the letter is gone before the photo starts fading in
   },
+
   // Editable decoration values for the party scene (Part 4). The
   // fixed decorations (balloons, fairy lights, bunting, sparkles)
   // live directly in index.html/style.css; confetti is generated
@@ -84,8 +85,8 @@ const CONFIG = {
   // letter (Part 8), and final photo caption (Part 9) are all
   // implemented below, so this stays the single place to edit copy.
   MESSAGES: {
-    wishText: "Blow the candle and make a wish...",
-    wishCountdownSteps: ["3", "2", "1"],
+    wishText: 'Blow the candle and make a wish...',
+    wishCountdownSteps: ['3', '2', '1'],
 
     // Each string becomes its own typed-out line in the letter card.
     // Keep lines reasonably short so they read comfortably on mobile.
@@ -148,6 +149,75 @@ const countdownTickSoundEl = document.getElementById('countdown-tick-sound');
 const countdownMusicEl = document.getElementById('countdown-music');
 const countdownTouchHintEl = document.getElementById('countdown-touch-hint');
 const wishTickSoundEl = document.getElementById('wish-tick-sound');
+
+// Every <audio> element on the page, used only by the iOS unlock
+// routine below.
+const ALL_AUDIO_ELS = [
+  switchSoundEl,
+  blowSoundEl,
+  musicEl,
+  countdownTickSoundEl,
+  countdownMusicEl,
+  wishTickSoundEl,
+];
+
+/* -------------------------------------------------------------
+   iOS AUDIO UNLOCK
+   Safari on iOS only allows an <audio> element to be played
+   programmatically (e.g. from a setTimeout, like the blow sound and
+   birthday music are) if that *same element* has already been
+   played at least once directly inside a real user gesture (a
+   click/tap handler, not a callback). Sounds that are already
+   triggered directly by a click — the switch sound, the countdown
+   music via the touch hint — work fine on their own. The blow sound
+   and birthday music are both fired from inside setTimeout chains
+   several steps after the actual tap, so on iOS they'd otherwise be
+   silently blocked. This "primes" every audio element in one pass
+   the moment the visitor first touches/clicks/presses a key
+   anywhere on the page, so all of them are unlocked well before
+   they're ever actually needed.
+   ------------------------------------------------------------- */
+const AUDIO_UNLOCK_EVENTS = ['touchstart', 'click', 'keydown'];
+let audioUnlocked = false;
+
+function unlockAllAudio() {
+  if (audioUnlocked) return;
+  audioUnlocked = true;
+
+  ALL_AUDIO_ELS.forEach((audioEl) => {
+    if (!audioEl) return;
+
+    // Don't touch anything that's already playing — e.g. the
+    // countdown music, which the other click handler on this same
+    // event may have just started. This routine only needs to
+    // "prime" elements that haven't been played yet.
+    if (!audioEl.paused) return;
+
+    try {
+      const playPromise = audioEl.play();
+
+      if (playPromise && typeof playPromise.then === 'function') {
+        playPromise
+          .then(() => {
+            audioEl.pause();
+            audioEl.currentTime = 0;
+          })
+          .catch(() => {
+            /* Still blocked or not needed yet — harmless either way. */
+          });
+      } else {
+        audioEl.pause();
+        audioEl.currentTime = 0;
+      }
+    } catch (err) {
+      /* Some browsers throw synchronously instead of rejecting — ignore. */
+    }
+  });
+
+  AUDIO_UNLOCK_EVENTS.forEach((eventName) => {
+    document.removeEventListener(eventName, unlockAllAudio);
+  });
+}
 
 /* -------------------------------------------------------------
    PARTY SCENE — STATE & ELEMENT REFERENCES
@@ -799,4 +869,8 @@ document.addEventListener('DOMContentLoaded', () => {
   startCountdown();
   birthdayModeEls.lightsButton.addEventListener('click', handleLightsButtonClick);
   wishEls.button.addEventListener('click', handleWishButtonClick);
+
+  AUDIO_UNLOCK_EVENTS.forEach((eventName) => {
+    document.addEventListener(eventName, unlockAllAudio);
+  });
 });
